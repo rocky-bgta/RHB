@@ -1,0 +1,27 @@
+{
+	"cardHolderName": "RHB Customer",
+    "outstandingBalance": 1234.56,
+    "statementBalance": 1234.56,
+    "availableLimit": 10000,
+    "availableCredit": 15000,
+    "creditLimit": 10000,
+    "paymentDueDate": "2018-02-01T17:00:00.000+08:00",
+    "minPaymentDue": 123.45,
+    "embossedName": "SITI BINTI MAZLAN",
+    "rewardPointBalance": 135,
+    "isRewardPoint": true,
+    "suppCards": [{
+            "cardNo": "4123123412341235",
+            "suppCreditLimit": 3000,
+            "outstandingBalance": 1234.56,
+            "embossName": "SITI BINTI MAZLAN",
+            "paymentNetwork": "MASTER"
+        }, {
+            "cardNo": "4123123412341236",
+            "suppCreditLimit": 2000,
+            "outstandingBalance": 1234.56,
+            "embossName": "NURBAYA BINTI MAZLAN",
+            "paymentNetwork": "MASTER"
+        }
+    ]
+}

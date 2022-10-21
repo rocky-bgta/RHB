@@ -1,0 +1,23 @@
+{
+    "pagination": {
+        "firstKey": "361",
+        "lastKey": "359",
+        "pageCounter": 2,
+        "source": "DCP",
+        "isLastPage": false
+    },
+    "transactionHistory": [{
+            "description": "Cash Withdraw WB",
+            "txnCategory": {
+                "code": "TRANSFER",
+                "description": "Transfer 3rd Party"
+            },
+            "senderName": "John Doe",
+            "recipientRef": "Payment for savings",
+            "otherPaymentDetails": "Meals",
+            "ref1": "Debit card ref here",
+            "txnDate": "2018-02-02T00:00:00.000+08:00",
+            "amount": 34.0
+        }
+    ]
+}

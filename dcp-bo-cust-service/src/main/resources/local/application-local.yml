@@ -1,0 +1,26 @@
+spring:
+  profiles: local
+  datasource:
+    dcpbo:
+      url: jdbc:sqlserver://172.30.82.186:2018;databaseName=dcpbo
+      username: dcpsql
+      password: dcpsql
+    dcp:
+      url: jdbc:sqlserver://172.30.82.186:2018;databaseName=dcp
+      username: dcpsql
+      password: dcpsql
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://172.30.79.45:8180/registry/eureka}
+
+logging:
+  config: classpath:log4j2-local.xml
+
+dcp:
+  stardate:
+    url: http://172.30.79.45:8180/dcp-stardate-service/reference-id

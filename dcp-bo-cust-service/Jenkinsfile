@@ -1,0 +1,54 @@
+import java.text.SimpleDateFormat
+
+pipeline {
+    agent {label 'dcp-slave'}
+    environment{
+      GIT_URL = "http://172.30.81.68:3000/DCPBO/dcp-bo-cust-service"
+      APP_NAME = "cust-service"
+      ARTIFACT_ID = ""
+      VERSION_NUMBER = ""
+      SERV_ENV = 'SIT'
+      SERV_IP = "172.30.79.32"
+      JBOSS_PORT = "10490"
+      SERV_ENV_VER = '2.0'
+      releasedate = ""
+    }
+
+    stages {
+        stage('Build and Deploy to Artifactory') {
+            steps {
+                bat "mvn -Dname=${ env.APP_NAME } -Dmaven.test.failure.ignore=true clean package deploy -P sit"
+            }
+        }
+        stage('Static Analysis') {
+            steps {
+                bat "mvn sonar:sonar -Dsonar.host.url=http://172.30.79.26:9000/sonar"
+            }
+        }
+        stage('Deploy to SIT 2.0') {
+            steps {
+              withCredentials([usernamePassword(credentialsId: 'uatInfra', passwordVariable: 'password', usernameVariable: 'username')]) {
+                bat "pscp.exe -pw ${password} target/${env.APP_NAME}.war ${username}@${env.SERV_IP}:/app/${env.SERV_ENV}/jboss-eap-7.0/deployment_${SERV_ENV_VER}/backoffice/"
+                bat "plink.exe ${username}@${env.SERV_IP} -pw ${password} -C \"sh /app/${env.SERV_ENV}/jboss-eap-7.0/bin/jboss-cli.sh --connect --controller=${env.SERV_IP}:${JBOSS_PORT} --command=\\\"deploy /app/${env.SERV_ENV}/jboss-eap-7.0/deployment_${SERV_ENV_VER}/backoffice/${env.APP_NAME}.war --force\\\"\""
+              }
+            }
+            post {
+              failure {
+                echo "failed to deploy ${env.APP_NAME}"
+              }
+              success {
+                echo "successfully deployed ${env.APP_NAME}"
+              }
+            }
+        }
+    }
+    post {
+      success {
+        echo "build success"
+        archiveArtifacts 'target/*.war'
+      }
+      always {
+        echo "for more information, find Mr Fab."
+      }
+    }
+}

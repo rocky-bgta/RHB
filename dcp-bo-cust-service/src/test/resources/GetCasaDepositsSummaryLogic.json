@@ -1,0 +1,86 @@
+{
+	"savings": [
+		{
+			"accountNo": "16102000039704",
+			"nickname": "My housing fund",
+			"availableBalance": 40300.41,
+			"product": {
+				"code": "100",
+				"description": "MAXSAVE ACCOUNT"
+			},
+			"accountStatus": {
+				"code": "00",
+				"description": "Active"
+			},
+			"connectorCode": "IND",
+			"staffFlag": "0",
+			"debitCardNo": "4677800000001123",
+			"labelTagging": "",
+			"permissions": "TRANSFER_SOURCE,TRANSFER_TARGET"
+		},
+		{
+			"accountNo": "15801100188354",
+			"nickname": "My kid education",
+			"availableBalance": 11000.99,
+			"product": {
+				"code": "103",
+				"description": "RHB JUNIOR SAVINGS ACCOUNT"
+			},
+			"accountStatus": {
+				"code": "01",
+				"description": "Dormant"
+			},
+			"connectorCode": "IND",
+			"staffFlag": "0",
+			"debitCardNo": "",
+			"labelTagging": "Dormant",
+			"permissions": ""
+		}
+	],
+	"currents": [
+		{
+			"accountNo": "24102000039104",
+			"nickname": "",
+			"availableBalance": 1200.00,
+			"product": {
+				"code": "130",
+				"description": "STATEMENT CURRENTS ACCOUNT"
+			},
+			"accountStatus": {
+				"code": "00",
+				"description": "Active"
+			},
+			"connectorCode": "JOR",
+			"staffFlag": "1",
+			"debitCardNo": "",
+			"labelTagging": "Staff",
+			"permissions": "TRANSFER_SOURCE,TRANSFER_TARGET"
+		},
+		{
+			"accountNo": "28801100188334",
+			"nickname": "My Salary",
+			"availableBalance": 4606.38,
+			"product": {
+				"code": "156",
+				"description": "RHB STAFF CURRENT 300"
+			},
+			"accountStatus": {
+				"code": "01",
+				"description": "Dormant"
+			},
+			"connectorCode": "JAN",
+			"staffFlag": "1",
+			"debitCardNo": "",
+			"labelTagging": "Dormant",
+			"permissions": ""
+		}
+	],
+	"debitCards": [
+		{
+			"cardNo": "4677800000001123",
+			"accountNo": "16102000039704",
+			"availableBalance": 40300.41,
+			"cardStatus":"Active"
+		}
+	]
+}

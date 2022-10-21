@@ -1,0 +1,22 @@
+server:
+  context-path: /cust-service
+
+spring:
+  profiles:
+    active: @activatedProperty@
+  application:
+    name: cust-service
+  jmx:
+    default-domain: cust-service
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      ddl-auto: validate
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+auditLogger:
+  audit:
+    queue:
+      name: java:jboss/exported/jms/queue/q_dcpbo_audit

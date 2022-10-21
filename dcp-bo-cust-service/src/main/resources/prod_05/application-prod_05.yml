@@ -1,0 +1,25 @@
+spring:
+  profiles: prod_05
+  datasource:
+    dcpbo:
+      jndi-name: java:/DCPBO
+    dcp:
+      jndi-name: java:/dcp
+
+server:
+  port: 29443
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://myrhbodcpap05vp:29443/registry/eureka}
+
+logging:
+  config: classpath:log4j2.xml
+
+dcp:
+  stardate:
+    url: http://myrhbodcpap05vp:29443/dcp-stardate-service/reference-id

@@ -1,0 +1,25 @@
+spring:
+  profiles: sit_pilot
+  datasource:
+    dcpbo:
+      jndi-name: java:/DCPBO
+    dcp:
+      jndi-name: java:/dcp
+
+server:
+  port: 8180
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://172.30.79.32:8180/registry/eureka}
+
+logging:
+  config: classpath:log4j2-sit_pilot.xml
+
+dcp:
+  stardate:
+    url: http://172.30.79.32:8180/dcp-stardate-service/reference-id

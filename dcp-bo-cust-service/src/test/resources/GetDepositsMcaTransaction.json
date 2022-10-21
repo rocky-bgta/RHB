@@ -1,0 +1,17 @@
+{
+    "pagination": {
+        "firstKey": "361",
+        "lastKey": "359",
+        "isLastPage": false,
+        "pageCounter": "01"
+    },
+    "transactionHistory": [{
+        "txnDate": "2018-02-02T00:00:00.000+08:00",
+        "description": "Financial Payment",
+        "amount": 34.0
+    }, {
+        "txnDate": "2018-02-02T00:00:00.000+08:00",
+        "description": "Financial Payment",
+        "amount": 34.0
+    }]
+}

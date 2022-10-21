@@ -1,0 +1,14 @@
+{
+    "isRedrawalAvailable": true,
+    "redrawalAmount": 500.0,
+    "remainingAmount": 4500.0,
+    "overdueAmount": 255.0,
+    "paymentDueDate": "20180927",
+    "monthlyPayment": 200.0,
+    "loanAmount": 5000.0,
+    "typeOfTerm": "M",
+    "originalTenure": 124,
+    "remainingTenure": 100,
+    "interestRate": 5.12,
+    "accountNo": "234567898765"
+}

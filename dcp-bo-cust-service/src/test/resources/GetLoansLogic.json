@@ -1,0 +1,42 @@
+{
+    "personalFinances": [{
+        "accountNo": "71223148385609",
+        "remainingAmount": 666.99
+    }, {
+        "accountNo": "79423112634822",
+        "remainingAmount": 140.45
+    }, {
+        "accountNo": "71234560182612",
+        "remainingAmount": 99.10
+    }],
+    "asb": [{
+        "accountNo": "71223148385609",
+        "remainingAmount": 666.99
+    }, {
+        "accountNo": "79423112634822",
+        "remainingAmount": 140.45
+    }, {
+        "accountNo": "71234560182612",
+        "remainingAmount": 99.10
+    }],
+    "mortgages": [{
+        "accountNo": "71223148385609",
+        "remainingAmount": 666.99
+    }, {
+        "accountNo": "79423112634822",
+        "remainingAmount": 140.45
+    }, {
+        "accountNo": "71234560182612",
+        "remainingAmount": 99.10
+    }],
+    "hirePurchases": [{
+        "accountNo": "712231483856",
+        "remainingAmount": 666.99
+    }, {
+        "accountNo": "79423112634822",
+        "remainingAmount": 140.45
+    }, {
+        "accountNo": "71234560182612",
+        "remainingAmount": 99.10
+    }]
+}

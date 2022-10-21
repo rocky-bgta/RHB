@@ -1,0 +1,16 @@
+{
+    "pagination": {
+        "firstKey": "361",
+        "lastKey": "359",
+        "pageCounter": "02",
+        "isLastPage": false
+    },
+    "transactionHistory": [{
+            "description": "Transfer 3rd Party",
+            "txnDate": "2018-02-02T00:00:00.000+08:00",
+            "postingDate": "2018-02-02T00:00:00.000+08:00",
+            "currency": "MYR",
+            "amount": 34.0
+        }
+    ]
+}

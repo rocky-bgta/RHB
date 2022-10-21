@@ -1,0 +1,40 @@
+{
+  "asnbFunds": [
+    {
+      "membershipNumber": "000013053807",
+      "nickName": "MARS HOW CAN BE",
+      "memberName": "MARS HOW CAN BE",
+      "identificationType": "W",
+      "identificationDescription": "New IC Number",
+      "identificationNumber": "770512010621",
+      "typeClosed": "N",
+      "fundDetail": [
+        {
+          "fundId": "AASSGD",
+          "holdings": 7895.11,
+          "fundStatus": "NORMAL",
+          "totalUnits": 8373.22,
+          "fundShortName": "ASN Imbang 2",
+          "fundFullName": "ASN Imbang (Mixed Asset Balanced) 2",
+          "fundType": "ASNB_VARIABLE",
+          "imageUrl": "/content/images/asnb/aassgd.png"
+        },
+        {
+          "fundId": "ASNS02",
+          "holdings": 1913.29,
+          "fundStatus": "NORMAL",
+          "totalUnits": 1907.95,
+          "fundShortName": "ASN Sara 2",
+          "fundFullName": "ASN Sara (Mixed Asset Conservative) 2",
+          "fundType": "ASNB_VARIABLE_FORWARD",
+          "imageUrl": "/content/images/asnb/asns02.png"
+        }
+      ],
+      "grandTotalUnitHoldings": 9808.4,
+      "grandTotalUnits": 10281.17,
+      "guardianId": "",
+      "guardianIdType": "",
+      "guardianIdNumber": ""
+    }
+  ]
+}

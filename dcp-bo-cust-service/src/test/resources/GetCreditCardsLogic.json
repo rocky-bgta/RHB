@@ -1,0 +1,17 @@
+{
+    "creditCards": [{
+            "cardNo": "4161020000397043",
+            "outstandingBalance": 40300.41,
+            "creditLimit": 30000.00,
+            "availableCredit": 20000.00,
+            "cardStatus":"Active"
+        }, {
+            "cardNo": "4143027143395824",
+            "outstandingBalance": 1300.24,
+            "creditLimit": 10000.00,
+            "availableCredit": 50000.00,
+            "labelTagging": "Supplementary",
+            "cardStatus":"Active"
+        }
+    ]
+}

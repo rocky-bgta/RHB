@@ -1,0 +1,17 @@
+{
+    "debitCards": [{
+            "cardNo": "4161020000397044",
+            "outstandingBalance": 40300.42,
+            "creditLimit": 40000.00,
+            "availableCredit": 10000.00,
+            "cardStatus":"Active"
+        }, {
+            "cardNo": "4143027143395825",
+            "outstandingBalance": 1300.24,
+            "creditLimit": 20000.00,
+            "availableCredit": 60000.00,
+            "labelTagging": "Supplementary",
+            "cardStatus":"Active"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+	"remainingAmount": 4500.00,
+	"overdueAmount": 255.00,
+	"paymentDueDate": "2018-02-02T00:00:00.000+08:00",
+	"monthlyPayment": 200.00,
+	"loanAmount": 5000.00,
+	"typeOfTerm": "M",
+	"originalTenure": 124,
+	"remainingTenure": 100,
+	"interestRate": 5.12
+}

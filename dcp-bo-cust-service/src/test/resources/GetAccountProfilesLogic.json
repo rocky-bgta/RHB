@@ -1,0 +1,263 @@
+{
+	"savings": [
+		{
+			"accountNo": "12345678901234",
+			"productCode": "1234",
+			"nickname": "My Little Bonobos",
+			"productName": "RHB Personal Saving",
+			"connectorCode": "IND",
+			"isDefaultAccount": true,
+			"isHidden": false,
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"currents": [
+		{
+			"accountNo": "23456789012345",
+			"productCode": "2345",
+			"nickname": "My Little Pangolin",
+			"productName": "RHB Personal Current",
+			"connectorCode": "JON",
+			"isDefaultAccount": false,
+			"isHidden": true,
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"termDeposits": [
+		{
+			"accountNo": "45678901234567",
+			"productCode": "4567",
+			"nickname": "My Little Ankylosaur",
+			"productName": "RHB Fixed Deposit 12mths",
+			"connectorCode": "SOP",
+			"isHidden": false,
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"creditCards": [
+		{
+			"cardNo": "1111222233334444",
+			"productCode": "56789012",
+			"nickname": "My Little Tardygrade",
+			"productName": "RHB Credit Card",
+			"imageUrl": "www.rhbgroup.com.my",
+			"paymentNetwork": "VISA",
+			"isDefaultAccount": false,
+			"isHidden": false,
+			"connectorCode": "SUPIND",
+			"expiryDate": "1020",
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"prepaidCards": [
+		{
+			"cardNo": "1111222233335555",
+			"productCode": "56789013",
+			"nickname": "My Little Tardygrade",
+			"productName": "RHB Prepaid Card",
+			"imageUrl": "www.rhbgroup.com.my",
+			"paymentNetwork": "VISA",
+			"isDefaultAccount": false,
+			"isHidden": false,
+			"connectorCode": "SUPIND",
+			"expiryDate": "1020",
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"debitCards": [
+		{
+			"cardNo": "1111222233331111",
+			"productCode": "56789014",
+			"nickname": "My Little Tardygrade",
+			"productName": "RHB Debit Card",
+			"imageUrl": "www.rhbgroup.com.my",
+			"paymentNetwork": "VISA",
+			"isDefaultAccount": false,
+			"isHidden": false,
+			"connectorCode": "SUPIND",
+			"expiryDate": "1020",
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"personalFinances": [
+		{
+			"accountNo": "67890123456789",
+			"productCode": "6789",
+			"nickname": "My Little Oarfish",
+			"productName": "RHB Personal Loan",
+			"isIslamic": false,
+			"isHidden": false,
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"asb": [
+		{
+			"accountNo": "78901234567890",
+			"productCode": "7890",
+			"nickname": "My Little Narwhal",
+			"productName": "RHB Personal Loan",
+			"isIslamic": false,
+			"isHidden": false,
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"mortgages": [
+		{
+			"accountNo": "9012345678901",
+			"productCode": "8901",
+			"nickname": "My Little Amoeba",
+			"productName": "RHB Personal Loan",
+			"isIslamic": false,
+			"isEquity": true,
+			"isFlexi": true,
+			"isHidden": false,
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"hirePurchases": [
+		{
+			"accountNo": "98765432109876",
+			"productCode": "9876",
+			"nickName": "My Little Mandragora",
+			"productName": "RHB Personal Loan",
+			"isIslamic": false,
+			"isHidden": false,
+			"permission": "ACCOUNT_DASHBOARD"
+		}
+	],
+	"mca": [
+		{
+			"accountNo": 61234567890123,
+			"totalBalance": 12103.35,
+			"deposits": [
+				{
+					"type": "Term",
+					"foreignCurrency": {
+						"code": "JPY",
+						"balance": 324.00,
+						"description": "Japanese Yen"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Call",
+					"foreignCurrency": "USD",
+					"currencyDescription": "United States Dollar",
+					"foreignBalance": 1000.00,
+					"localCurrency": "MYR",
+					"localBalance": 4027.50
+				},
+				{
+					"type": "Term",
+					"foreignCurrency": {
+						"code": "SGD",
+						"balance": 324.00,
+						"description": "Singapore Dollar"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Term",
+					"foreignCurrency": {
+						"code": "USD",
+						"balance": 324.00,
+						"description": "United States Dollar"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Call",
+					"foreignCurrency": "SGD",
+					"currencyDescription": "Singapore Dollar",
+					"foreignBalance": 100.00,
+					"localCurrency": "MYR",
+					"localBalance": 295.79
+				}
+			]
+		},
+		{
+			"accountNo": 63210987654321,
+			"totalBalance": 9819.62,
+			"deposits": [
+				{
+					"type": "Term",
+					"foreignCurrency": {
+						"code": "JPY",
+						"balance": 324.00,
+						"description": "Japanese Yen"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Call",
+					"foreignCurrency": {
+						"code": "USD",
+						"balance": 324.00,
+						"description": "United States Dollar"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Call",
+					"foreignCurrency": {
+						"code": "SGD",
+						"balance": 324.00,
+						"description": "Singapore Dollar"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				}
+			]
+		}
+	],
+	"unitTrusts": [
+		{
+			"accountNo": "1234567890",
+			"isHidden": false,
+			"nickname": "The super bestest UT account",
+			"jointType": "P",
+			"accountStatus": "Active",
+			"accountMyrMarketValue": 10000.00,
+			"accountMyrUnrealisedGainLoss": 1000.00
+		},
+		{
+			"accountNo": "123123123123",
+			"isHidden": false,
+			"nickname": "Le Urutimetto UT account",
+			"jointType": "P",
+			"accountStatus": "Active",
+			"accountMyrMarketValue": 99999.00,
+			"accountMyrUnrealisedGainLoss": -9.00
+		}
+	],
+	"asnb": [
+		{
+		  "membershipNumber": "000013053807",
+		  "nickname": "MARS HOW CAN BE",
+		  "isHidden": false,
+		  "isMinor": false,
+		  "identificationType": "W",
+		  "identificationNumber": "770512010621",
+		  "guardianIdType": "",
+		  "guardianIdNumber": "",
+		  "permission": "TOPUP_SOURCE,ACCOUNT_DASHBOARD,ACCOUNT_LIST"
+		}
+	  ]
+}

@@ -1,0 +1,125 @@
+{
+  "accountNo": "823456789012346",
+  "nickname": "RHB",
+  "accountType": "Active",
+  "accountHolderName": [
+    {
+      "name": "ANTONIUS BATUBARA"
+    },
+    {
+      "name": "SUSANTO AIRLANGGA"
+    }],
+  "lastPerformedTxnDate": "2018-01-18T17:00:00.000+08:00",
+  "accountStatus":
+  {
+    "code": "A",
+    "description": "Active"
+  },
+  "signingCondition":
+  {
+    "code": "E",
+    "description": "Principal to Sign"
+  },
+  "unitTrustFunds": [
+    {
+      "fundName": "Alibaba Fund",
+      "unitHoldings": 72,
+      "localCurrency":
+      {
+        "code": "MYR",
+        "navPrice": 4.492,
+        "marketValue": 323.424,
+        "unrealisedGainLoss": 9.70272,
+        "unrealisedGainLossPercentage": 5.0586,
+        "investmentAmount": 313.72128,
+        "averageUnitPrice": 4.35724
+      },
+      "fundCurrency":
+      {
+        "code": "USD",
+        "navPrice": 1.123,
+        "marketValue": 80.856,
+        "unrealisedGainLoss": 2.42568,
+        "unrealisedGainLossPercentage": 5.0586,
+        "investmentAmount": 78.43032,
+        "averageUnitPrice": 1.08931
+      },
+      "assetClass":
+      {
+        "code": "EF",
+        "description": "EQUITY FUND"
+      },
+      "riskCategory":
+      {
+        "code": "3",
+        "description": "INCOME"
+      }
+    },
+    {
+      "fundName": "Blibli Dot Com Fund",
+      "unitHoldings": 35,
+      "localCurrency":
+      {
+        "code": "MYR",
+        "navPrice": 12.485,
+        "marketValue": 436.975,
+        "unrealisedGainLoss": -152.94125,
+        "unrealisedGainLossPercentage": -5.0586,
+        "investmentAmount": 589.91625,
+        "averageUnitPrice": 16.85475
+      },
+      "fundCurrency":
+      {
+        "code": "MYR",
+        "navPrice": 12.485,
+        "marketValue": 436.975,
+        "unrealisedGainLoss": -152.94125,
+        "unrealisedGainLossPercentage": -5.0586,
+        "investmentAmount": 589.91625,
+        "averageUnitPrice": 16.85475
+      },
+      "assetClass":
+      {
+        "code": "DY",
+        "description": "DYNAMIC"
+      },
+      "riskCategory":
+      {
+        "code": "1",
+        "description": "SECURE"
+      }
+    },
+    {
+      "fundName": "Fiesta Chicken Fund",
+      "unitHoldings": 10,
+      "localCurrency":
+      {
+        "code": "MYR",
+        "navPrice": 18.406,
+        "marketValue": 184.06,
+        "unrealisedGainLoss": 57.0586,
+        "unrealisedGainLossPercentage": 5.0586,
+        "investmentAmount": 127.0014,
+        "averageUnitPrice": 12.70014
+      },
+      "fundCurrency":
+      {
+        "code": "SGD",
+        "navPrice": 9.203,
+        "marketValue": 92.03,
+        "unrealisedGainLoss": 28.5293,
+        "investmentAmount": 63.5007,
+        "averageUnitPrice": 6.35007
+      },
+      "assetClass":
+      {
+        "code": "FO",
+        "description": "FUND OF FUNDS"
+      },
+      "riskCategory":
+      {
+        "code": "4",
+        "description": "BALANCE"
+      }
+    }]
+}

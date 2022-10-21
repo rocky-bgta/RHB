@@ -1,0 +1,39 @@
+server:
+  servlet:
+    contextPath: /customer
+  port: 8080
+
+spring:
+  profiles:
+    active: test
+  application:
+    name: customer-service
+  datasource:
+    dcpbo:
+      url: jdbc:sqlserver://172.30.82.186:2018;databaseName=dcpbo
+      username: dcpsql
+      password: dcpsql
+    dcp:
+      url: jdbc:sqlserver://172.30.82.186:2018;databaseName=dcp
+      username: dcpsql
+      password: dcpsql
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      ddl-auto: validate
+
+logging:
+  config: classpath:log4j2-dev.xml
+
+eureka:
+    client:
+      registerWithEureka: false
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://172.30.79.45:8080/registry/eureka}
+
+auditLogger:
+  audit:
+    queue:
+      name: java:jboss/exported/jms/queue/q_dcpbo_audit

@@ -1,0 +1,112 @@
+{
+	"mca": [
+		{
+			"accountNo": 61234567890123,
+			"totalBalance": 12103.35,
+			"deposits": [
+				{
+					"type": "Term",
+					"foreignCurrency": {
+						"code": "JPY",
+						"balance": 324.00,
+						"description": "Japanese Yen"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Call",
+					"foreignCurrency": {
+						"code": "USD",
+						"description": "United States Dollar",
+						"balance": 1000.00
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4027.50
+					}
+				},
+				{
+					"type": "Term",
+					"foreignCurrency": {
+						"code": "SGD",
+						"balance": 324.00,
+						"description": "Singapore Dollar"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Term",
+					"foreignCurrency": {
+						"code": "USD",
+						"balance": 324.00,
+						"description": "United States Dollar"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Call",
+					"foreignCurrency": {
+						"code": "SGD",
+						"description": "Singapore Dollar",
+						"balance": 100.00
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 295.79
+					}
+				}
+			]
+		},
+		{
+			"accountNo": 63210987654321,
+			"totalBalance": 9819.62,
+			"deposits": [
+				{
+					"type": "Term",
+					"foreignCurrency": {
+						"code": "JPY",
+						"balance": 324.00,
+						"description": "Japanese Yen"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Call",
+					"foreignCurrency": {
+						"code": "USD",
+						"balance": 324.00,
+						"description": "United States Dollar"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				},
+				{
+					"type": "Call",
+					"foreignCurrency": {
+						"code": "SGD",
+						"balance": 324.00,
+						"description": "Singapore Dollar"
+					},
+					"localCurrency": {
+						"code": "MYR",
+						"balance": 4534.43
+					}
+				}
+			]
+		}
+	]
+}

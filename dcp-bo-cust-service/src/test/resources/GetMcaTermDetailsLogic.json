@@ -1,0 +1,28 @@
+{
+  "status": {
+    "statusType": "success",
+    "code": "10000",
+    "title": "Hooray!",
+    "description": "Successful transaction"
+  },
+
+  "data": {
+    "accountNo": "1234556456",
+    "referenceNo": "20180627001",
+    "foreignCurrency": {
+      "code": "SGD",
+      "balance": "1350.00"
+    },
+    "localCurrency": {
+      "code": "MYR",
+      "balance": "12421.30"
+    },
+    "visualPercentage": "66",
+    "placementDate": "2018-02-01T17:00:00.000+08:00",
+    "maturityDate": "2019-02-01T17:00:00.000+08:00",
+    "interestRate": "1.21",
+    "tenure": "360",
+    "lastRenewalDate": "2018-06-01T17:00:00.000+08:00",
+    "accruedInterest": "148.50"
+  }
+}

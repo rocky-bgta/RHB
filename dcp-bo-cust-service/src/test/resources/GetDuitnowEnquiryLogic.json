@@ -1,0 +1,30 @@
+{
+  "duitNow": [
+    {
+      "registrationId": "0000000438",
+      "displayName": "Savings Account-I",
+      "idType": "MBNO",
+      "idVal": "*********6621",
+      "countryCode": "",
+      "status": "ACTV",
+      "bic": "RHBBMYKL",
+      "bankAccount": "**********7516",
+      "bankAcctType": "SVGS",
+      "bankAcctName": "Savings Account-I",
+      "otpCheckSumFlag": false
+    },
+    {
+      "registrationId": "0000001319",
+      "displayName": "Ordinary CA",
+      "idType": "NRIC",
+      "idVal": "********8473",
+      "countryCode": "",
+      "countryName": "",
+      "status": "ACTV",
+      "bic": "RHBBMYKL",
+      "bankAccount": "**********4340",
+      "bankAcctType": "CACC",
+      "bankAcctName": "Ordinary CA"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+	{
+		"accountNo": "1234567890",
+		"isHidden": "N",
+		"nickname": "The super bestest UT account",
+		"joinType": "P",
+		"accountStatus": "Active",
+		"accountMyrMarketValue": 10000.00,
+		"accountMyrUnrealisedGainLoss": 1000.00
+	},
+	{
+		"accountNo": "123123123123",
+		"isHidden": "N",
+		"nickname": "Le Urutimetto UT account",
+		"joinType": "P",
+		"accountStatus": "Active",
+		"accountMyrMarketValue": 99999.00,
+		"accountMyrUnrealisedGainLoss": -9.00
+	}
+]

@@ -1,0 +1,19 @@
+spring:
+  autoconfigure:
+    exclude:  org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+  datasource:
+    dcpbo:
+      url: jdbc:sqlserver://172.30.82.186:2018;databaseName=dcpbo
+      username: dcpsql
+      password: dcpsql
+    dcp:
+      url: jdbc:sqlserver://172.30.82.186:2018;databaseName=dcp
+      username: dcpsql
+      password: dcpsql
+
+logging:
+  level:
+    com:
+      rhbgroup:
+        dcpbo: debug
+

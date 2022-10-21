@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
+        </Console>
+        <RollingFile name="RollingFileAppender" fileName="/app/dcplogs/dcp-bo-cust-service.log"
+            filePattern="/app/dcplogs/dcp-bo-cust-service-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+            <DefaultRolloverStrategy max="365" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="ERROR">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Root>
+
+        <Logger name="com.rhbgroup.dcpbo" level="debug" additivity="false">
+            <AppenderRef ref="ConsoleAppender" />
+        </Logger>
+
+        <Logger name="com.rhbgroup.dcpbo" level="DEBUG" additivity="false">
+            <AppenderRef ref="RollingFileAppender" />
+        </Logger>
+    </Loggers>
+
+
+</Configuration>

@@ -1,0 +1,25 @@
+{
+  "customer": {
+    "marketValue": 4220.218,
+    "unrealisedGainLoss": 440.7753,
+    "unrealisedGainLossPercentage": 21.3836,
+    "investmentAmount": 2061.278
+  },
+  "unitTrusts": [
+    {
+      "accountNo": "823456789012346",
+      "marketValue": 944.459,
+      "unrealisedGainLoss": -86.18,
+      "unrealisedGainLossPercentage": -8.36,
+      "investmentAmount": 1030.639
+    },
+    {
+      "accountNo": "823456789012347",
+      "marketValue": 3275.759,
+      "unrealisedGainLoss": 526.9553,
+      "unrealisedGainLossPercentage": 51.1290,
+      "investmentAmount": 1030.639
+    }
+  ],
+  "lastUpdatedDate": "2018-01-18T17:00:00.00008:00"
+}

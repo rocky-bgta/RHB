@@ -1,0 +1,20 @@
+{
+        "nickname": "My housing fund",
+        "ownershipType": "IND",
+        "currentBalance": 12000.99,
+        "availableBalance": 11000.99,
+        "overdraft": 2000.1,
+        "float1Day": 1000.0,
+        "product": {
+            "code": "100",
+            "description": "Ordinary Savings Account"
+        },
+        "accountStatus": {
+            "code": "00",
+            "description": "Active"
+        },
+        "debitCard": {
+                "debitCardNo": "4677000012340000",
+                "cardType": "MASTER"
+        }
+}

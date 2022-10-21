@@ -1,0 +1,49 @@
+{
+"step1":
+{
+"description":"Enter Debit/Credit/Prepaid/Loan Number",
+"status" : {
+"code" : "10000",
+"description" : "Success",
+"date" : "2019-07-23 18:03:20.387"
+}
+},
+"step2":
+{
+"description":"Create Login Details & Secure Word",
+"status" : {
+"code" : "10000",
+"description" : "Success",
+"date" : "2019-07-23 18:03:30.387"
+}
+},
+"step3":
+{
+"description":"Accept T&C and Consent for Cross-Selling, Marketing & Promotion",
+"status" : {
+"code" : "10000",
+"description" : "Success",
+"date" : "2019-07-23 18:13:30.387"
+}
+},
+"loanAccNo":"",
+"idType":"",
+"idNo" : "",
+"cisMobileNo":"60166383822",
+"cardNo":"4522102912682389",
+"cisNo":"2342897483",
+"isPremier":"Yes",
+"otpMobileNo":"60166383822",
+"otpRegistrationDate" : "",
+"username":"alimuthu123",
+"email":"alimuthu123@gmail.com",
+"termsAndConditionsAccepted":"Yes",
+"termsAndConditionsAcceptedDate":"",
+"termsAndConditionsCategory":"Master",
+"termsAndConditionsPdpaVersion":"",
+"termsAndConditionsGeneralVersion":"0",
+"termsAndConditionsPrivacyVersion":"0",
+"termsAndConditionsMasterVersion":"0",
+"crossSellingAccepted":"Yes",
+"crossSellingAcceptedDate":""
+}

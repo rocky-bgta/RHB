@@ -1,0 +1,17 @@
+{
+    "termDepositTotal": 150000.0,
+    "termDeposits": [{
+            "accountNo": "12335374673",
+            "maturityDate": "2018-02-02T00:00:00.000+08:00",
+            "currentBalance": 10000.0
+        }, {
+            "accountNo": "12335374673",
+            "maturityDate": "2018-02-02T00:00:00.000+08:00",
+            "currentBalance": 20000.0
+        }, {
+            "accountNo": "12335374673",
+            "maturityDate": "2018-02-02T00:00:00.000+08:00",
+            "currentBalance": 15000.0
+        }
+    ]
+}

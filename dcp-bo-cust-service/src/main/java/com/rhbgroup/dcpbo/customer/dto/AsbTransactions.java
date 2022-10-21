@@ -1,0 +1,58 @@
+package com.rhbgroup.dcpbo.customer.dto;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.rhbgroup.dcp.model.Capsule;
+import com.rhbgroup.dcp.transformer.ruledriven.util.GSONUtil;
+import com.rhbgroup.dcpbo.customer.contract.BoData;
+import com.rhbgroup.dcpbo.customer.contract.CapsuleToDto;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Setter
+@Getter
+public class AsbTransactions implements BoData, CapsuleToDto {
+
+    private Pagination pagination;
+    private List<TransactionHistory> transactionHistory;
+
+    public AsbTransactions() {
+        pagination = new Pagination();
+        transactionHistory = new ArrayList<>();
+    }
+
+    public void addTransactionHistory(TransactionHistory transactionHistoryItem) {
+        transactionHistory.add(transactionHistoryItem);
+    }
+
+    @Override
+    public BoData convert(Capsule capsule) {
+        String responseString = capsule.getCurrentMessage();
+        JsonObject jsonObject = GSONUtil.convertToGson(responseString);
+        JsonObject paginationJsonObj = jsonObject.get("pagination").getAsJsonObject();
+        this.pagination.setFirstKey(paginationJsonObj.get("firstKey").getAsJsonPrimitive().getAsString());
+        this.pagination.setLastKey(paginationJsonObj.get("lastKey").getAsJsonPrimitive().getAsString());
+        this.pagination.setIsLastPage(paginationJsonObj.get("isLastPage").getAsJsonPrimitive().getAsBoolean());
+        this.pagination.setPageCounter(paginationJsonObj.get("pageCounter").getAsJsonPrimitive().getAsInt());
+
+        JsonArray transactionHistoryArrays = jsonObject.getAsJsonArray("transactionHistory");
+        if (transactionHistoryArrays != null) {
+			for (int i = 0; i < transactionHistoryArrays.size(); i++) {
+				JsonObject transactionHistoryJsonItem = transactionHistoryArrays.get(i).getAsJsonObject();
+				TransactionHistory transactionHistoryItem = new TransactionHistory();
+				transactionHistoryItem
+						.setTxnDate(transactionHistoryJsonItem.get("txnDate").getAsJsonPrimitive().getAsString());
+				transactionHistoryItem.setDescription(
+						transactionHistoryJsonItem.get("description").getAsJsonPrimitive().getAsString());
+				transactionHistoryItem
+						.setAmount(transactionHistoryJsonItem.get("amount").getAsJsonPrimitive().getAsDouble());
+				this.transactionHistory.add(transactionHistoryItem);
+			}
+        }
+
+        return this;
+    }
+}

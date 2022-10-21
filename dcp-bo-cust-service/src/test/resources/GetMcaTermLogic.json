@@ -1,0 +1,62 @@
+{
+	"status": {
+		"statusType": "success",
+		"code": "10000",
+		"title": "Hooray!",
+		"description": "Successful transaction"
+	},
+	"data": {
+		"accountNo": "",
+		"totalBalance": "",
+		"termDeposits": [
+			{
+				"referenceNo": "201708220001",
+				"foreignCurrency": {
+					"code": "USD",
+					"balance": "247.00",
+					"description":"US Dollar"
+				},
+				"localCurrency": {
+					"code": "MYR",
+					"balance": "7236.12"
+				}
+			},
+			{
+				"referenceNo": "201708220002",
+				"foreignCurrency": {
+					"code": "USD",
+					"balance": "42.00",
+					"description": "US Dollar"
+				},
+				"localCurrency": {
+					"code": "MYR",
+					"balance": "563.12"
+				}
+			},
+			{
+				"referenceNo": "IBK201710300001",
+				"foreignCurrency": {
+					"code": "USD",
+					"balance": "623.00",
+					"description":"US Dollar"
+				},
+				"localCurrency": {
+					"code": "MYR",
+					"balance": "54235.12"
+				}
+			},
+			{
+				"referenceNo": "IBK201703120001",
+				"foreignCurrency": {
+					"code": "SGD",
+					"balance": "324.00",
+					"description":"Singapore Dollar"
+				},
+				"localCurrency": {
+					"code": "MYR",
+					"balance": "4534.43"
+				}
+			}
+		]
+	}
+}
