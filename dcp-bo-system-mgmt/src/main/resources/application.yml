@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: @activatedProperty@
+  application:
+    name: system-mgmt-service
+  jmx:
+    default-domain: system-mgmt-service
+    enabled: false
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      ddl-auto: validate
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+auditLogger:
+  audit:
+    queue:
+      name: java:jboss/exported/jms/queue/q_dcpbo_audit
+
+server:
+  contextPath: /system-mgmt-service

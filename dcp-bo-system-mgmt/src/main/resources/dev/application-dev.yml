@@ -1,0 +1,30 @@
+spring:
+  profiles: dev
+  datasource:
+    dcpbo:
+      jndi-name: java:/DCPBO
+    dcp:
+      jndi-name: java:/dcp
+
+server:
+  port: 8080
+
+ldap:
+  url: ldap://172.30.81.104:389
+  basedn: CN=Users,DC=bgiuatdom,DC=ent,DC=intranet,DC=rhbgroup,DC=com
+  userdn: CN=dcpbo1,CN=Users,DC=bgiuatdom,DC=ent,DC=intranet,DC=rhbgroup,dc=com
+  password: Outlook1
+  referral: follow
+  nameField: displayName
+  emailField: mail
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://172.30.79.45:8080/registry/eureka}
+
+logging:
+  config: classpath:log4j2.xml

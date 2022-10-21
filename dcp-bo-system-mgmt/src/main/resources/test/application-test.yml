@@ -1,0 +1,33 @@
+spring:
+  autoconfigure:
+    # exclude:  org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+  datasource:
+    dcpbo:
+      url: jdbc:sqlserver://172.30.82.186:2021;databaseName=dcpbo
+      username: dcpsql
+      password: dcpsql
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    dcp:
+      url: jdbc:sqlserver://172.30.82.186:2021;databaseName=dcp
+      username: dcpsql
+      password: dcpsql
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+ldap:
+  url: ldap://172.30.81.104:389
+  basedn: CN=Users,DC=bgiuatdom,DC=ent,DC=intranet,DC=rhbgroup,DC=com
+  userdn: CN=dcpbo1,CN=Users,DC=bgiuatdom,DC=ent,DC=intranet,DC=rhbgroup,dc=com
+  password: Outlook1
+  referral: follow
+  nameField: displayName
+  emailField: mail
+
+eureka:
+  client:
+    enabled: false
+
+logging:
+  level:
+    com:
+      rhbgroup:
+        dcpbo: debug

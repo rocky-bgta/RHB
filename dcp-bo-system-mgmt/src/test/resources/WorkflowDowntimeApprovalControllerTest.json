@@ -1,0 +1,39 @@
+{ 
+   "approvalId":513,
+   "name":{ 
+      "before": null,
+      "after":"Downtime Take a break"
+   },
+   "startTime":{ 
+      "before": null,
+      "after": "2019-05-31 11:00:00.000"
+   },
+   "endTime":{ 
+      "before":"<State B value>",
+      "after":"2019-05-31 11:30:00.000"
+   },
+   "isPushNotification" : { 
+      "before": null,
+      "after":true
+   },
+   "pushDate":{  
+      "before":null,
+      "after":"2019-05-30 09:00:00.000"
+   },
+   "type":{  
+      "before": null,
+      "after":"ADHOC"
+   },
+   "adhocType":{  
+      "before": null,
+      "after":"System"
+   },
+   "actionType":"ADD",
+   "reason":null,
+   "createdBy":"dcpbo2",
+   "createdTime":"2019-05-28 17:15:25.49",
+   "updatedBy":"dcpbo2",
+   "updatedTime":"2019-05-28 17:15:25.49",
+   "creatorName":"dcpbo2",
+   "isCreator":"Y"
+}
