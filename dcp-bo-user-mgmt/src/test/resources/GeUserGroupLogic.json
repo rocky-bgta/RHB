@@ -1,0 +1,11 @@
+{
+    "function": [{
+            "groupId":1,
+            "groupName":"Management",
+            "accessType":"M",
+            "functionDetais" :[{
+                "functionId":1,
+                "functionName":"User"
+            }]
+        }]
+}

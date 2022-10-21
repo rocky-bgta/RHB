@@ -1,0 +1,29 @@
+spring:
+  profiles: drl1_02
+  datasource:
+    dcpbo:
+      jndi-name: java:/DCPBO
+    dcp:
+      jndi-name: java:/dcp
+server:
+  port: 29443
+
+ldap:
+  url: ldap://172.30.81.104:389
+  basedn: CN=Users,DC=bgiuatdom,DC=ent,DC=intranet,DC=rhbgroup,DC=com
+  userdn: CN=dcpbo1,CN=Users,DC=bgiuatdom,DC=ent,DC=intranet,DC=rhbgroup,dc=com
+  password: ENC(hT1pO+LEmHRiKSDOHB14Y6H9ebwF/Fj1)
+  referral: follow
+  nameField: displayName
+  emailField: mail
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://myrhbodcpap02vp:29443/registry/eureka}
+
+logging:
+  config: classpath:log4j2.xml

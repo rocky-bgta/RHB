@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: @activatedProperty@
+  application:
+    name: user-mgmt-service
+  jmx:
+    default-domain: user-mgmt-service
+    enabled: false
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      ddl-auto: validate
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+auditLogger:
+  audit:
+    queue:
+      name: java:jboss/exported/jms/queue/q_dcpbo_audit
+
+server:
+  contextPath: /user-mgmt-service
+
+workflow:
+  overview:
+    exclusions:
+      - module: "Workflow"
+        function: "Workflow"
+      - module: "Provide Assistance"
+        function: "Challenge Question Unlock"
+      - module: "Provide Assistance"
+        function: "Customer Search"
+      - module: "Log Inquiry"
+        function: "FO Audit Log"
+
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    password: fd17c588416fe50185e470ba9443c819376398d3f8c1a1015afe6301

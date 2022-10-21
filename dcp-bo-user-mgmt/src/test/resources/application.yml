@@ -1,0 +1,25 @@
+server:
+  servlet:
+    context-path: /user-mgmt
+  port: 8080
+
+spring:
+  profiles:
+    active: test
+  application:
+    name: user-mgmt
+  jmx:
+    default-domain: user-mgmt
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      ddl-auto: validate
+
+logging:
+  level:
+    root: info
+    com:
+      rhbgroup:
+        dcpbo:
+          user: debug

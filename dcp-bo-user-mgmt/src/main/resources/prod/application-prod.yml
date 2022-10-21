@@ -1,0 +1,18 @@
+logging:
+  file: bo-customer-service.log
+  path: ${user.dir}/logs
+
+spring:
+  jms:
+    jndi-name: java:jboss/exported/jms/DcpJmsConnectionFactory
+
+auditLogger:
+  audit:
+    queue:
+      name: java:jboss/exported/jms/queue/q_dcp_audit
+
+eBean:
+  config:
+    name: db
+    jndi:
+      name: java:/dcp
