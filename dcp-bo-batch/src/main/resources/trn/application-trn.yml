@@ -1,0 +1,560 @@
+spring:
+  logging:
+    level:
+      root: INFO
+  profiles: trn
+  datasource:
+    url: jdbc:sqlserver://172.30.82.186:2023;databaseName=dcpbo
+    username: dcpsql
+    password: dcpsql
+  datasource-dcp:
+    url: jdbc:sqlserver://172.30.82.186:2023;databaseName=dcp
+    username: dcpsql
+    password: dcpsql
+  datasource-dcparchive:
+    url: jdbc:sqlserver://172.30.82.186:2023;databaseName=dcp
+    username: dcpsql
+    password: dcpsql
+    
+dcp:
+  bo:
+    batch:
+      failedfolder:
+        path: ${user.dir}/batch/failed
+      inputfolder:
+        path: ${user.dir}/batch/input
+      outputfolder:
+        path: ${user.dir}/batch/output
+      successfolder:
+        path: ${user.dir}/batch/success
+    report:
+      exportfolder:
+        path: ${user.dir}/report/export
+
+ftp:
+  host: 10.8.1.119
+  port: 22
+  username: tester
+  password: password
+  
+ftpasnb:
+  host: 172.30.84.108
+  port: 22
+  username: dcpsvruat
+  password: He$*ftp19
+
+ftpibk:
+  host: 10.1.5.9
+  port: 22
+  username: dcpappsvruat01@uateftp21
+  password: Rhbb@nk!
+
+jmssms:
+  host: 172.30.79.47
+  port: 8080
+  username: jms
+  password: P@ssw0rd
+
+jmsaudit:
+  host: 172.30.79.47
+  port: 8080
+  username: jms
+  password: P@ssw0rd
+
+job:
+  email:
+    host: 172.30.81.113
+    port: 25
+    username: ENC(9PrQuzQW5WMGJW3klmwV0x0LNccgqhNrQO5rahv9FEo=)
+    password: ENC(0WKv4d8FuOs98L8qL7KhLpV7LuC6b+vw)
+    to: DCPBO1@bgiuatdom.rhbgroup.com
+    from: DCPBO2@bgiuatdom.rhbgroup.com
+    smtpAuth: true
+    tlsEnable: false
+    tlsRequire: false
+    sslTrustAllCert: false
+    emailDebugMode: true
+  emaildmbud089:
+    host: 172.30.81.113
+    port: 25
+    username: ENC(9PrQuzQW5WMGJW3klmwV0x0LNccgqhNrQO5rahv9FEo=)
+    password: ENC(0WKv4d8FuOs98L8qL7KhLpV7LuC6b+vw)
+    to: DCPBO1@bgiuatdom.rhbgroup.com
+    from: DCPBO2@bgiuatdom.rhbgroup.com
+    subject: CASA OLA Application dated DD-MM-YYYY
+    body: Enclosed CASA OLA Application for your reference
+    smtpAuth: true
+    tlsEnable: false
+    tlsRequire: false
+    sslTrustAllCert: false
+    emailDebugMode: true    
+
+jasper:
+  server:
+    url: http://172.30.79.47:8180/jasperserver
+    username: Batchadmin
+    password: Batch123#
+  config:
+    reports:
+    - id: DMBUD999_1000
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 1000${yyyyMMdd}_rpt
+    - id: DMBUD999_1010
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: TMLIFE01${yyyyMMdd}_rpt
+    - id: DMBUD999_1091
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 1091${yyyyMMdd}_rpt
+    - id: DMBUD999_1200
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 1200${yyyyMMdd}_rpt
+    - id: DMBUD999_5017
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5017${yyyyMMdd}_rpt
+    - id: DMBUD999_5022
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5022${yyyyMMdd}_rpt
+    - id: DMBUD999_5035
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5035${yyyyMMdd}_rpt
+    - id: DMBUD999_5045
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5045${yyyyMMdd}_rpt
+    - id: DMBUD999_5049
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5049${yyyyMMdd}_rpt
+    - id: DMBUD999_5085
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5085${ddMMyyyy}_rpt
+    - id: DMBUD999_5105
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5105${ddMMyyyy}_rpt
+    - id: DMBUD999_5125
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5125${yyyyMMdd}_rpt
+    - id: DMBUD999_5126
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5126${yyyyMMdd}_rpt
+    - id: DMBUD999_5167
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5167${yyyyMMdd}_rpt
+    - id: DMBUD999_5185
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: U_Mobile-Data${ddMMyyyy}_rpt
+    - id: DMBUD999_5212
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5212${yyyyMMdd}_rpt
+    - id: DMBUD999_5229
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: TMLIFE01${yyyyMMdd}_rpt
+    - id: DMBUD999_5234
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5234${ddMMyyyy}_rpt
+    - id: DMBUD999_5300
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: Celcom${yyyyMMdd}_rpt
+    - id: DMBUD999_6004
+      uri: /reports/TRG/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 6004${yyyyMMdd}_rpt
+    - id: DMBUD003
+      uri: /reports/TRG/Financial/DMBUD003/dmb_txn_vol_and_value
+      format: PDF,XLSX
+      targetpath: uat_dcp_txnvol
+      filename: DMB_Txn_Vol_&_Value_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD004
+      uri: /reports/TRG/Financial/DMBUD004/success_bill_pay
+      format: PDF,XLSX
+      targetpath: uat_dcp_bp_txns
+      filename: DMB_Successful BP_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD019
+      uri: /reports/TRG/Financial/DMBUD019/dmb_suspect_ft
+      format: PDF,XLSX
+      targetpath: uat_dcp_suspect
+      filename: DMB_Suspect_FT_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD030
+      uri: /reports/TRG/Financial/DMBUD030/dmb_success_duitnow
+      format: PDF,XLSX
+      targetpath: uat_dcp_rpp_from
+      filename: DMB_Success_DuitNow_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD031
+      uri: /reports/TRG/Financial/DMBUD031/dmb_unsuccess_duitnow
+      format: PDF,XLSX
+      targetpath: uat_dcp_rpp_from
+      filename: DMB_Unsuccess_DuitNow_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD065
+      uri: /reports/TRG/Financial/DMBUD065/dmb_bp_timeout_txn
+      format: PDF,XLSX
+      targetpath: uat_dcp_bp_to
+      filename: DMB_BP_Timeout_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM031
+      uri: /reports/TRG/Financial/DMBUM031/dmb_jompay_on_us_txn
+      format: PDF,XLSX
+      targetpath: dcp_jompay_onus_suc_monthly
+      filename: DMB_JomPAY_On_Us_Txn_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM032
+      uri: /reports/TRG/Financial/DMBUM032/dmb_jompay_off_us_txn
+      format: PDF,XLSX
+      targetpath: dcp_jompay_offus_suc_monthly
+      filename: DMB_JomPAY_Off_Us_Txn_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD008
+      uri: /reports/TRG/non_financial/DMBUD008/dmb_cust_profile_update
+      format: PDF,XLSX
+      targetpath: uat_dcp_custprof_update
+      filename: DMB_Cust_Profile_Update_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD020
+      uri: /reports/TRG/non_financial/DMBUD020/dmb_webfraud_susp_user
+      format: PDF,XLSX
+      targetpath: uat_dcp_webfraud
+      filename: DMB_WebFraud_Susp_User_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD032
+      uri: /reports/TRG/non_financial/DMBUD032/dmb_success_nad_reg
+      format: PDF,XLSX
+      targetpath: uat_dcp_rpp_from
+      filename: DMB_Success_NAD_REG_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD033
+      uri: /reports/TRG/non_financial/DMBUD033/dmb_unsuccess_nad_reg
+      format: PDF,XLSX
+      targetpath: uat_dcp_rpp_from
+      filename: DMB_Unsuccess_NAD_REG_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD034
+      uri: /reports/TRG/non_financial/DMBUD034/dmb_success_nad_maint
+      format: PDF,XLSX
+      targetpath: uat_dcp_rpp_from
+      filename: DMB_Success_NAD_Maint_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD035
+      uri: /reports/TRG/non_financial/DMBUD035/dmb_unsuccess_nad_maint
+      format: PDF,XLSX
+      targetpath: uat_dcp_rpp_from
+      filename: DMB_Unsuccess_NAD_Maint_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM030
+      uri: /reports/TRG/non_financial/DMBUM030/dmb_webfraud_timeout
+      format: PDF,XLSX
+      targetpath: DCP_WEBFRAUD
+      filename: DMB_WebFraud_Timeout_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM004
+      uri: /reports/TRG/non_financial/DMBUM004/dmb_act_subscribers_state
+      format: PDF,XLSX
+      targetpath: SUBSC_BY_STATE
+      filename: DMB_ACT_Subscribers_State_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBBT001
+      uri: /reports/TRG/sample/DMBBT001/dcp_batch_external_interfaces
+      format: PDF
+      filename: DMBBT001${yyyyMMdd}_rpt
+      targetpath: DMBBT001
+    - id: DMBID001
+      uri: /reports/TRG/IS/DMBID001/dmb_bo_user_id_maintenance
+      format: PDF,XLSX
+      targetpath: DCP_USER_MAINTENANCE
+      filename: DMB_BO_User_ID_Maintenance_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID002
+      uri: /reports/TRG/IS/DMBID002/dmb_role_maintenance_report
+      format: PDF,XLSX
+      targetpath: DCP_ROLE_MAINTENANCE
+      filename: DMB_Role_Maintenance_Report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID003
+      uri: /reports/TRG/IS/DMBID003/dmb_bo_user_logon_violation_report
+      format: PDF,XLSX
+      targetpath: DCP_USER_VIOLATION
+      filename: DMB_BO_User_Logon_Violation_Report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID005
+      uri: /reports/TRG/IS/DMBID005/dmb_rhb_customer_logon_violation_report
+      format: PDF,XLSX
+      targetpath: DCP_CUST_VIOLATION
+      filename: DMB_RHB_Customer_Logon_Violation_Report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID006
+      uri: /reports/TRG/IS/DMBID006/dmb_bo_user_access_activtiy
+      format: PDF,XLSX
+      targetpath: DCP_USER_ACTIVITY
+      filename: DMB_BO_User_Acces_Activtiy_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD005
+      uri: /reports/TRG/Financial/DMBUD005/dmb_unsuccessful_bp_txn
+      format: PDF,XLSX
+      targetpath: DCP_BP_TXNS_UNSUCCESSFUL
+      filename: DMB_Unsuccessful BP_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD036
+      uri: /reports/TRG/Financial/DMBUD036/dmb_jompay_on_us_txn
+      format: PDF,XLSX
+      targetpath: DCP_JOMPAY_PAYMENT
+      filename: DMB_JomPAY On Us Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD037
+      uri: /reports/TRG/Financial/DMBUD037/dmb_jompay_off_us_txn
+      format: PDF,XLSX
+      targetpath: DCP_JOMPAY_PAYMENT
+      filename: DMB_JomPAY Off Us Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD038
+      uri: /reports/TRG/Financial/DMBUD038/dmb_jompay_on_us_off_us_unsuccessful_txn
+      format: PDF,XLSX
+      targetpath: DCP_JOMPAY_FAILED_PYMT_DAILY
+      filename: DMB_JomPAY On Us Off Us_Unsuccessful Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD039
+      uri: /reports/TRG/Financial/DMBUD039/dmb_daily_successful_fund_transfer_txn
+      format: PDF,XLSX
+      targetpath: DCP_FUNDTRANSFER_SUCCESS_DAILY
+      filename: DMB_Daily_Successful_Fund_Transfer_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD040
+      uri: /reports/TRG/Financial/DMBUD040/dmb_daily_unsuccessful_fund_transfer_txn
+      format: PDF,XLSX
+      targetpath: DCP_FUNDTRANSFER_FAILED_DAILY
+      filename: DMB_Unsuccessful_Fund_Transfer_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBIM001
+      uri: /reports/TRG/IS/DMBIM001/dmb_bo_dormant_user
+      format: PDF,XLSX
+      targetpath: DCP_DORMANT_USERS
+      filename: DMB_BO_Dormant_User_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBIM002
+      uri: /reports/TRG/IS/DMBIM002/dmb_user_grp_listing
+      format: PDF,XLSX
+      targetpath: DCP_USER_GROUP
+      filename: DMB_User_Grp_Listing_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBIM003
+      uri: /reports/TRG/IS/DMBIM003/dmb_user_access_matrix
+      format: PDF,XLSX
+      targetpath: DCP_USER_MATRIX
+      filename: DMB_User_Access_Matrix_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBIM004
+      uri: /reports/TRG/IS/DMBIM004/dmb_full_user_profile
+      format: PDF,XLSX
+      targetpath: DCP_USER_PROFILE
+      filename: DMB_Full_User_Profile_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID007
+      uri: /reports/TRG/IS/DMBID007/audit_log
+      format: XLSX
+      targetpath: dcp_audit_log_from
+      filename: DMB_Audit_Log_${yyMMdd}
+      parameters:
+      - name: ignorePagination
+        value: true
+
+    - id: DMBUD078
+      uri: /reports/TRG/Financial/DMBUD078/dmb_asnb_transaction_listing
+      format: PDF,XLSX
+      targetpath: dcp_asnb_enq
+      filename: asnb_sub_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD079
+      uri: /reports/TRG/Financial/DMBUD079/dmb_registration_report
+      format: PDF,XLSX
+      targetpath: dmb_registration
+      filename: reg_sub_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD085
+      uri: /reports/TRG/Financial/DMBUD085/mca_term_placment_withdrawal
+      format: PDF,XLSX
+      targetpath: dcp_mca_term_placment_withdrawal
+      filename: mca_term_placment_withdrawal_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD083
+      uri: /reports/TRG/Financial/DMBUD083/MCA_Buy_Sell_Currency
+      format: PDF,XLSX
+      targetpath: dcp_mca_currency
+      filename: mca_buy_sell_currency_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD084
+      uri: /reports/TRG/Financial/DMBUD084/MCA_Buy_Sell_Precious_Metal
+      format: PDF,XLSX
+      targetpath: dcp_mca_precious_metal
+      filename: mca_buy_sell_precious_metal_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD080
+      uri: /reports/TRG/Financial/DMBUD080/report_biller_Performance_Non_Jompay
+      format: PDF,XLSX
+      targetpath: dcp_non_jompay_biller_txn
+      filename: biller_performance_non_jompay_biller_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD081
+      uri: /reports/TRG/Financial/DMBUD081/report_biller_Performance_Jompay
+      format: PDF,XLSX
+      targetpath: dcp_jompay_biller_txn
+      filename: biller_performance_jompay_biller_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD093
+      uri: /reports/TRG/Financial/DMBUD093/biller_settlement_report_Weekly
+      format: XLSX
+      targetpath: dcp_biller_settlement_report_Weekly
+      filename: other_biller__settlement_weekly_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD092
+      uri: /reports/TRG/Financial/DMBUD092/biller_settlement_report_monthly
+      format: XLSX
+      targetpath: dcp_biller_settlement_report_monthly
+      filename: other_biller__settlement_monthly_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM036
+      uri: /reports/TRG/non_financial/DMBUM036/profile_management_device_management
+      format: XLSX
+      targetpath: dcp_prof_mgmt_device
+      filename: profile_management_device_management_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD094
+      uri: /reports/TRG/Financial/DMBUD094/profile_management_customer_demographics
+      format: XLSX
+      targetpath: dcp_prof_mgmt_cust_demo
+      filename: profile_management_customer_demographics_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD096
+      uri: /reports/TRG/Financial/DMBUD096/profile_management_by_non_financial_transaction_volume
+      format: XLSX
+      targetpath: dcp_prof_mgmt_non_fin_txn_vol
+      filename: profile_management_by_non_financial_transaction_volume_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD097
+      uri: /reports/TRG/Financial/DMBUD097/profile_management_by_non_financial_transaction_volume_summary
+      format: XLSX
+      targetpath: dcp_prof_mgmt_non_fin_txn_sum
+      filename: profile_management_by_non_financial_transaction_volume_summary_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD095
+      uri: /reports/TRG/Financial/DMBUD095/profile_management_fin_txn_volume
+      format: XLSX
+      targetpath: dcp_prof_mgmt_fin_txn_vol
+      filename: profile_management_fin_txn_volume_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD099
+      uri: /reports/TRG/Financial/DMBUD099/fpx_ekyc_failed_refund
+      format: XLSX
+      targetpath: inward_fpx_ekyc_failed_refund
+      filename: inward_fpx_ekyc_failed_refund_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true

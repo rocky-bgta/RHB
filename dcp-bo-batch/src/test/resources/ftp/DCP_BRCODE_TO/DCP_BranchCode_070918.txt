@@ -1,0 +1,20 @@
+HT RHB BRANCH TABLE    20180626202332                                                                                                                                                                   
+DT 55555 097 KL MAIN 2                                75 JALAN TUN HS LEE                      50000 KUALA LUMPUR                                                                JSGZZ JSG00  002       
+DT 64012 777 KL MAIN 2                                75 JALAN TUN HS LEE                      50000 KUALA LUMPUR                                                                JSGZZ JSG00  002       
+DT 14026 086 JALAN BUKIT BINTANG 2                    58-60 JALAN BUKIT BINTANG                JALAN BUKIT BINTANG                      55100 KUALA LUMPUR                       BBTZZ BBT00  003       
+DT 64021 085 JALAN BUKIT BINTANG 2                    58-60 JALAN BUKIT BINTANG                JALAN BUKIT BINTANG                      55100 KUALA LUMPUR                       BBTZZ BBT00  003       
+DT 08016 005 IPOH                                     NO: 2,4,6 & 8 , JALAN TUN SAMBANTHAN     30000 IPOH                               PERAK                                    IPHZZ IPH00  004       
+DT 58011 005 IPOH                                     NO: 2,4,6 & 8 , JALAN TUN SAMBANTHAN     30000 IPOH                               PERAK                                    IPHZZ IPH00  004       
+DT 08025 005 KAMPAR                                   81,83 & 85 JALAN GOPENG                  31907 KAMPAR PERAK                                                                KMPZZ KMP00  005       
+DT 58020 005 KAMPAR                                   81,83 & 85 JALAN GOPENG                  31907 KAMPAR PERAK                                                                KMPZZ KMP00  005       
+DT 01017 006 KOMTAR JB CITY CENTRE                    LOT G35, GROUND FLOOR, KOMTAR            JBCC, JOHOR BAHRU CITY CENTRE            80000 JOHOR BAHRU                        JBUZZ JBU00  006       
+DT 51012 006 KOMTAR JB CITY CENTRE                    LOT G35, GROUND FLOOR, KOMTAR            JBCC, JOHOR BAHRU CITY CENTRE            80000 JOHOR BAHRU                        JBUZZ JBU00  006       
+DT       007 SANDAKAN                                 LOT 1-6 GFLR W KHOO SIAK CHIEW           LEBUH TIGA JALAN SIM SIM                 90008 SANDAKAN   SABAH                   SDKZZ SDK00  007       
+DT 60014 007 SANDAKAN                                 LOT 1-6 GFLR W KHOO SIAK CHIEW           LEBUH TIGA JALAN SIM SIM                 90008 SANDAKAN   SABAH                   SDKZZ SDK00  007       
+DT 06012 008 KUANTAN                                  NO.1, 2 & 3,JALAN PUTRA SQUARE 1, PUTRA  25200 KUANTAN                            PAHANG                                   KTNZZ KTN00  008       
+DT 56017 008 KUANTAN                                  NO.1, 2 & 3,JALAN PUTRA SQUARE 1, PUTRA  25200 KUANTAN                            PAHANG                                   KTNZZ KTN00  008       
+DT 14035 009 PETALING JAYA                            1,3 & 5 JALAN 52/18                      NEW TOWN CENTRE                          46200 PETALING JAYA                      PJAZZ PJA00  009       
+DT 64030     PETALING JAYA                            1,3 & 5 JALAN 52/18                      NEW TOWN CENTRE                          46200 PETALING JAYA                      PJAZZ PJA00  009       
+DT 12018 008 SERI KEMBANGAN 1                         1484A & 1484B JALAN BESAR                43300 SERI KEMBANGAN                                                              SDGZZ SDG00  010       
+DT 55555 888 SERI KEMBANGAN 1                         1484A & 1484B JALAN BESAR                43300 SERI KEMBANGAN                                                              SDGZZ SDG00  010       
+TR 00018                                                                                                                                                                                                

@@ -1,0 +1,31 @@
+package com.rhbgroup.dcp.bo.batch.job.config;
+
+import org.springframework.batch.core.Job;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+
+import com.rhbgroup.dcp.bo.batch.framework.core.BaseJobConfiguration;
+import com.rhbgroup.dcp.bo.batch.job.step.InsertSummaryFinancialTransactionStepBuilder;
+
+@Configuration
+@Lazy
+public class SummarizationFinancialTransactionJobConfiguration extends BaseJobConfiguration {
+    private static final String JOB_NAME = "SummarizationFinancialTransactionJob";
+
+    @Autowired
+    InsertSummaryFinancialTransactionStepBuilder insertSummaryFinancialTransactionStepBuilder;
+
+    @Autowired
+    public void setInsertSummaryFinancialTransactionStepBuilder(InsertSummaryFinancialTransactionStepBuilder insertSummaryFinancialTransactionStepBuilder) {
+        this.insertSummaryFinancialTransactionStepBuilder= insertSummaryFinancialTransactionStepBuilder;
+    }
+    
+    @Bean(JOB_NAME)
+    public Job buildJob() {
+       return getDefaultJobBuilder(JOB_NAME)
+                .next(this.insertSummaryFinancialTransactionStepBuilder.buildStep())
+                .build();
+    }
+}

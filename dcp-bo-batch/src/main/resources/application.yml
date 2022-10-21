@@ -1,0 +1,1360 @@
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    password: fd17c588416fe50185e470ba9443c819376398d3f8c1a1015afe6301
+
+ftp:
+  host: 10.186.49.126
+  port: 22
+  username: tester
+  password: password
+  issecureftp: true
+  timeout: 60000
+
+ftpasnb:
+  host: 10.186.49.126
+  port: 22
+  username: tester
+  password: password
+  issecureftp: true
+  timeout: 60000
+
+ftphost:
+  host: 10.186.49.126
+  port: 22
+  username: tester
+  password: password
+  issecureftp: true
+  timeout: 60000
+
+ftpibk:
+  host: localhost
+  port: 10000
+  username: tester
+  password: password
+  issecureftp: true
+  timeout: 60000
+
+ftpibkprepaid:
+  host: 10.163.1.24
+  port: 10000
+  username: tester
+  password: password
+  issecureftp: true
+  timeout: 60000
+
+jmssms:
+  host: 172.30.79.45
+  port: 8080
+  username: jms
+  password: P@ssw0rd
+
+jmsaudit:
+  host: 172.30.79.45
+  port: 8080
+  username: jms
+  password: P@ssw0rd
+
+bologin:
+  api: http://172.30.79.45:8180/gateway/bo/login
+  username: dcpbo2
+  password: Outlook1
+
+dcp:
+  bo:
+    batch:
+      failedfolder:
+        path: ${user.dir}/batch/failed
+      inputfolder:
+        path: ${user.dir}/batch/input
+      outputfolder:
+        path: ${user.dir}/batch/output
+      successfolder:
+        path: ${user.dir}/batch/success
+    report:
+      exportfolder:
+        path: ${user.dir}/report/export
+
+job:
+  common:
+    error.messages.max.limit: 10
+    resttemplate:
+      connectionrequesttimeout: 20000
+      connecttimeout: 20000
+      readtimeout: 20000
+  billerpaymentfilejob:
+    chunksize: 10000
+    detailcolumns: '%-1.1s%-6.6s%-8.8s%-15.15s%-2.2s%-20.20s%-25.25s%-25.25s%-32.32s%-6.6s%-12.12s'
+    detailnames: recordType,txnId,txnDate,txnAmount,txnType,txnDesc,billRefNo1,billRefNo2,billRefNo3,txnTime,filler
+    name: OUT_BillerPaymentFile_{#date}.txt
+    namedateformat: yyyyMMdd
+    templatename: Standard_01
+    masterftpfolder: dcp_bpf_master_from
+    middlename: _comma_
+  billerdynamicpaymentfilejob:
+    chunksize: 10000
+    detailcolumns: '%-1.1s%-6.6s%-8.8s%-15.15s%-2.2s%-20.20s%-25.25s%-25.25s%-32.32s%-6.6s%-12.12s'
+    detailnames: recordType,txnId,txnDate,txnAmount,txnType,txnDesc,billRefNo1,billRefNo2,billRefNo3,txnTime,filler
+    name: OUT_BillerDynamicPaymentFile_{#date}.txt
+    namedateformat: yyyyMMdd
+    templatename: Standard_01
+    masterftpfolder: dcp_bpf_master_from
+    middlename: _comma_
+  loadibkbillerpaymentjob:
+    templatename: Standard_01
+    chunksize: 10000
+    headerprefix: H
+    headercolumns: 1-1,2-5,6-13,14-27,28-47,48-152
+    headernames: recordType,batchNumber,processDate,billerAccountNo,billerAccountName,filter
+    detailprefix: D
+    detailcolumns: 1-1,2-7,8-15,16-30,31-32,33-52,53-77,78-102,103-134,135-140,141-152
+    detailnames: recordType,txnId,txnDate,txnAmount,txnType,txnDescription,billerRefNo1,billerRefNo2,billerRefNo3,txnTime,filter
+    trailerprefix: T
+    trailercolumns: 1-1,2-5,3-10,11-25,26-40,41-152
+    trailernames: recordType,processingFlag,batchTotal,batchAmount,hashTotal,filter
+  loadibkbillerdynamicpaymentjob:
+    templatename: Standard_01
+    chunksize: 10000
+    headerprefix: H
+    headercolumns: 1-1,2-5,6-13,14-27,28-47,48-152
+    headernames: recordType,batchNumber,processDate,billerAccountNo,billerAccountName,filter
+    detailprefix: D
+    detailcolumns: 1-1,2-7,8-15,16-30,31-32,33-52,53-77,78-102,103-134,135-140,141-152
+    detailnames: recordType,txnId,txnDate,txnAmount,txnType,txnDescription,billerRefNo1,billerRefNo2,billerRefNo3,txnTime,filter
+    trailerprefix: T
+    trailercolumns: 1-1,2-5,3-10,11-25,26-40,41-152
+    trailernames: recordType,processingFlag,batchTotal,batchAmount,hashTotal,filter
+  jompayematchingreportjob:
+    chunksize: 1000000
+    bankcodeibg: '100002186'
+    ftpfolder: DCP_EMATCH_FROM
+    detailcolumns: '%-1.1s%-3.3s%-2.2s%-3.3s%-2.2s%-3.3s%-3.3s%-22.22s%-1.1s%-4.4s%-19.19s%-2.2s%-3.3s%-3.3s%-22.22s%-5.5s%-8.8s%-6.6s%-15.15s%-4.4s%-120.120s'
+    detailnames: channelRecordType,channelId,channelStatus,applicationId,acctControlOne,acctControlTwo,acctControlThree,accountNo,debitCreditInd,userTransCode,transactionAmount,fromAcctControlOne,fromAcctControlTwo,fromAcctControlThree,fromAccountNo,transactionBranch,transactionDate,transactionTime,transactionSeqNo,transactionTerminal,filler
+    name: LDCPD8922F_{#date}.txt
+    namedateformat: yyMMdd
+  updateibgrejectedstatusjob:
+    chunksize: 10000
+    windowfiles: DCP_IBGSta_W1_ddmmyy.txt,DCP_IBGSta_W2_ddmmyy.txt,DCP_IBGSta_W3_ddmmyy.txt,DCP_IBGSta_W4_ddmmyy.txt,DCP_IBGSta_W5_ddmmyy.txt
+    detailcolumns: 1-8,9-14,15-20,21-40,41-56,57-67,68-71,72-91,92-113,114-133,134-134
+    detailnames: date,teller,trace,ref1,name,amount,rejectCode,accountNumber,beneName,beneAccount,filler
+    ftpfolder: dcp_ibgrej_to
+  prepaidreloadextractionjob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    detailnames: txnTime,refNo,hostRefNo,mobileNo,prepaidProductCode,amount,filler
+    ftpfolder: DCP_PREPAID_FROM
+    namecasa: DCP_PrepaidReload_CASA_{#date}.txt
+    namecc: DCP_PrepaidReload_CC_{#date}.txt
+    namedateformat: yyyyMMdd
+  extractcustomerprofilejob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    detailcolumns: '%-14.14s'
+    detailnames: cisNo
+    ftpfolder: DCP_CISUPP_FROM
+    name: DCP_ReqUpdtParticular_{#date}.txt
+    namedateformat: yyyyMMdd
+  extractlogindatafirsttime:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    ftpfolder: dcp_first_login_daily
+    namedateformat: yyyyMMdd
+    csv:
+        filename: DMB_CustFirstTimeLogin_{#date}.csv
+        detailcolumns: '"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s"'
+        detailnames: date,time,cisNo,name,nricNo,idType,staff,channel,loginType,status,email,authorisedDeviceName,dateRegisteredDevice,lastLoginDate,lastLoginTime
+        header: '"Date","Time","CIS No.","Name","NRIC No.","Id Type","Staff","Channel","Login Type","Status","Email Address","Authorised Device Name","Date Registered Device","Date of Last Login","Time of Last Login"'
+    txt:
+        filename: DMB_CustFirstTimeLogin_{#date}.txt
+        detailcolumns: '"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s"'
+        detailnames: date,time,cisNo,name,nricNo,idType,staff,channel,loginType,status,email,authorisedDeviceName,dateRegisteredDevice,lastLoginDate,lastLoginTime
+        header: DH{#date}
+        footer: DT{#count}
+  extractlogindata:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    ftpfolder: dcp_login_daily
+    namedateformat: yyyyMMdd
+    csv:
+        filename: DMB_CustDailyLogin_{#date}.csv
+        detailcolumns: '"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s"'
+        detailnames: date,time,cisNo,name,nricNo,idType,staff,channel,loginType,status,email,authorisedDeviceName,dateRegisteredDevice,lastLoginDate,lastLoginTime
+        header: '"Date","Time","CIS No.","Name","NRIC No.","Id Type","Staff","Channel","Login Type","Status","Email Address","Authorised Device Name","Date Registered Device","Date of Last Login","Time of Last Login"'
+    txt:
+        filename: DMB_CustDailyLogin_{#date}.txt
+        detailcolumns: '"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s"'
+        detailnames: date,time,cisNo,name,nricNo,idType,staff,channel,loginType,status,email,authorisedDeviceName,dateRegisteredDevice,lastLoginDate,lastLoginTime
+        header: DH{#date}
+        footer: DT{#count}
+  extractpoddata:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    ftpfolder: dcp_pod_daily
+    namedateformat: yyyyMMdd
+    csv:
+        filename: DMB_CustPodStatus_{#date}.csv
+        detailcolumns: '"%s","%s","%s","%s","%s","%s"'
+        detailnames: cisNo,userStatus,isStaff,podStatus,podDate,podTime
+        header: '"CIS_NO","USER_STATUS","IS_STAFF","POD_STATUS","POD_DATE","POD_TIME"'
+    txt:
+        filename: DMB_CustPodStatus_{#date}.txt
+        detailcolumns: '"%s","%s","%s","%s","%s","%s"'
+        detailnames: cisNo,userStatus,isStaff,podStatus,podDate,podTime
+        header: DH{#date}
+        footer: DT{#count}
+  epullautoenrollment:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    ftpfolder: dcp_cisupp_from
+    namedateformat: yyyyMMdd
+    txt:
+      filename: DCP_FDeStateUpd{#date}.txt
+      detailcolumns: '%-2.2s%-14.14s%-10.10s%-8.8s%-1.1s%-165.165s'
+      detailnames: bodyIndicator,cisNo,date,time,statementType,filler
+      header: '00{#date}FDEBRDIB51{#filler}'
+      footer: '99{#count}{#filler}'
+  extractsmsotpnotificationjob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    ftpfolder: dcp_smsbydcp_monthly
+    namedateformat: MMyyyy
+    csv:
+        filename: DMB_MonthlySMSByDCP_{#date}.csv
+        detailcolumns: '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s'
+        detailnames: ibgBatchFail,firstTimeSignIn,welcomeNewUsers,changeTransactionLimit,changeEmail,removeDeviceAccess,changeQuickloginPin,changeOtpMobile,makePrimaryDevice,securePlusRegistration,securePlusDeregistration,securePlusOverride,txnThreshold
+        header: 'IBG_BATCH_FAIL,FIRST_TIME_SIGN_IN,WELCOME_NEW_USERS,CHANGE_TRANSACTION_LIMIT,CHANGE_EMAIL,REMOVE_DEVICE_ACCESS,CHANGE_QUICKLOGIN_PIN,CHANGE_OTP_MOBILE,MAKE_PRIMARY_DEVICE,SECURE_PLUS_REGISTRATION,SECURE_PLUS_DEREGISTRATION,SECURE_PLUS_OVERRIDE,TXN_THRESHOLD,TOTAL_SMS_SENT_BY_DCP'
+  bnmsubs:
+    MBK01:
+      jdbcpagingpagesize: 1000
+      ftpfolder: dcp_mbk_bnm_stats
+      namedateformat: ddMMyyyy
+      sqlview: vw_report_mbk_active_subscribers
+      csv:
+        filename: MB0218ISRP{#date}V01S1.csv
+        detailcolumns: '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s'
+        detailnames: rowNumber,idType,idNo,accountName,dateOfBirth,activeStatus,recordStatus,idIndicator,stateCode,state
+    IBK01:
+      jdbcpagingpagesize: 1000
+      ftpfolder: dcp_ibk_bnm_stats
+      namedateformat: ddMMyyyy
+      sqlview: vw_report_ibk_active_subscribers
+      csv:
+        filename: IB0218ISRP{#date}V01S1.csv
+        detailcolumns: '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s'
+        detailnames: rowNumber,idType,idNo,accountName,dateOfBirth,activeStatus,recordStatus,idIndicator,stateCode,state
+  nadderegistrationrequestsbyparticipantsjob:
+    detailcolumns: '02|DEAC|%s|%s|%s|%s'
+    detailnames: proxyId,proxyType,secondaryId,secondaryType
+    ftpfolder: DCP_NADDEREGISTRATION_FROM
+    name: LDCPD7001F_{#date}.txt
+    namedateformat: yyMMdd
+  jompayfailurevalidationextractionjob:
+    jdbcpagingsize: 1000
+    chunksize: 10000
+    ftpfolder: dcp_nbps_channel_from
+    name: IBKUD041_{#date}.txt
+    namedateformat: yyyyMMdd
+    bankid: RHB2186
+  ibgrejectednotificationjob:
+    chunksize: 10000
+    jdbcpagingsize: 1000
+    eventcode: 31001
+    jmsqueue: jms/queue/DcpIBGRejectSMS
+  dailydeltaprofilesmsjob:
+    chunksize: 10000
+    jdbcpagingsize: 1000
+    eventcode: 90001
+    jmsqueue: jms/queue/DcpDailyDeltaSMS
+  updatecustomerprofilejob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    delimiter: '|'
+    detailnames: cisNo,race,birthDate,gender,staffIndicator,hostCustomerType,maddress1,maddress2,maddress3,maddress4,postcode,city,state,country,space
+    ftpfolder: DCP_CISUPP_TO
+    name: DCP_UpdtParticular_{#date}.txt
+    namedateformat: yyyyMMdd
+  gstcentralizedfileupadtejob:
+    detailcolumns: 1-2,4-8,10-12,14-23,25-34,36-55,57-106,108-114,116-117,119-128,130-130,132-143,145-152,154-161,163-170,172-177,179-188,190-195,197-200
+    detailnames: recordIndicator,entityCode,entityIndicator,uniqueId,sourceSystemId,transactionIdentifier,transactionDescription,gstRate,treatmentType,taxCode,calculationMethod,glAccountCodeCharges,startDate,endDate,lastUpdateDate,lastUpdateTime,lastUpdateBy,hostTranOrGSTGLCode,filler
+    ftpfolder: GST_DCP_TO
+    name: GST_DCP_1B-{#date}.txt
+    namedateformat: yyyyMMdd
+  extractandupdateexchangeratejob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    batchcode: LDCPD9012F
+    #restapi: http://172.30.79.45:8180/dcp-bo-system-mgmt-1.1.0-SNAPSHOT/bo/system/mca/rate/{currencyCode}
+    restapi: http://172.30.79.45:8180/gateway/api/system/system-mgmt-service/bo/system/mca/rate/{currencyCode}
+    maxattempt: 3
+  extractandupdatemcainterestratejob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    batchcode: LDCPD8900B
+    restapi: http://172.30.79.45:8180/gateway/api/system/system-mgmt-service/bo/system/mca/interest-rate/
+    maxattempt: 3
+  extractandupdatefpxtransactionstatusjob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    batchcode: LDCPD2001B
+    restapi: http://172.30.79.45:8180/gateway/api/system/system-mgmt-service/bo/system/fpx/term-deposit/placement/
+    maxattempt: 3
+  epullenrollmentjob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    restapi: http://172.30.79.45:8080/gateway/api/system/system-mgmt-service/bo/system/epull/enrollment
+    maxattempt: 3
+  mergecisjob:
+    delimiter: '|'
+    detailnames: cisNo,newCISNo,processingDate
+    ftpfolder: dcp_cisdc_to
+    name: DCPCISDC{#date}.txt
+    namedateformat: MMdd
+    batchcode: LDCPD9006T
+  branchcodeupdatejob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    detailcolumns: 1-3,4-9,10-13,14-54,55-95,96-136,137-177,178-183,184-190,191-200
+    detailnames: recordType,bnmBranchCode,rhbBranchCode,rhbBranchName,rhbBranchAdd1,rhbBranchAdd2,rhbBranchAdd3,extra1,extra2,extra3
+    ftpfolder: DCP_BRCODE_TO
+    name: DCP_BranchCode_{#date}.txt
+    namedateformat: ddMMyy
+  loadibkprepaidreloadjob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    delimiter: ','
+    detailnames: txnTime,refNo,hostRefNo,mobileNo,prepaidProductCode,amount,txnStatus
+    ftpfolder: nibk_prepaid_to
+    namecasa: IBKPrepaidReload_CASA_{#date}.txt
+    namecc: IBKPrepaidReload_CC_{#date}.txt
+    namedateformat: yyyyMMdd
+  premiercustomerinfoandrmcodetaggingjob:
+    chunksize: 10000
+    headerindicator: "00"
+    footerindicator: "99"
+    detailindicator: "01"
+    detailcolumns: 1-2,3-16,17-21,22-35,36-115,116-129,130-149,150-163,164-165,166-182,183-183
+    detailnames: indicator,cifNo,rmCode,cisNo2,fullNm,cisNo3,idNo,cisNo4,staffInd,filler,end
+    ftpfolder: dcp_premier_rmcode_to
+    name: DCP_RMCODE_D{#date}.txt
+    namedateformat: yyyyMMdd
+  loadibkjompayematchjob:
+    chunksize: 10000
+    headerprefix: 0
+    headercolumns: 1-1,2-9,10-10,11-18,19-19,20-27,28-28,29-34,35-35,36-55,56-251
+    headernames: recordType,programName,filler,processingDate,filler,systemDate,filler,systemTime,filler,ematching,filler
+    detailprefix: 1
+    detailcolumns: 1-1,2-4,5-6,7-9,10-11,12-14,15-17,18-39,40-40,41-44,45-63,64-65,66-68,69-71,72-93,94-98,99-106,107-112,113-127,128-131,132-251
+    detailnames: recordType,channelId,channelStatus,applicationId,acctCtrl1,acctCtrl2,acctCtrl3,accountNo,debitCreditInd,userTranCode,amount,fromAcctCtrl1,fromAcctCtrl2,fromAcctCtrl3,fromAcctNo,txnBranch,txnDate,txnTime,txnSeqNo,txnTerminal,filler
+    trailerprefix: 9
+    trailercolumns: 1-1,2-19,20-20,21-38,39-251
+    trailernames: recordType,totalRecord,filler,totalAmount,filler
+    name: ibk_nbps_{#date}.txt
+    namedateformat: yyyyMMdd
+    ftpfolder: ibk_ematch_to
+  loadibkjompayfailurevalidationextractionjob:
+    ftpfolder: nbps_channel_to
+    name: IBKUD041_{#date}.txt
+    namedateformat: yyyyMMdd
+    chunksize: 10000
+    headerprefix: H
+    headercolumns: 1-8,9-18
+    headernames: processDate,payerBankId
+    detailprefix: D
+    detailcolumns: 1-10,11-15,16-27,28-57
+    detailnames: billerCode,paymentChannel,requestTime,reasonForFailure
+    daydiff: 0
+  loademunittrustjob:
+    batchcode: LDCPD7000B
+    chunksize: 10000
+    jdbcpagingsize: 1000
+    delimiter: '|'
+    ftpfolder: dcp_em_ut_from
+    maxtargetsetkey: ut.max.target.data.set
+    utcustomerfile: em_dcp_cis_
+    utcustomerrelfile: em_dcp_cis_rel_
+    utaccountfile: em_dcp_acct_
+    utaccounthldfile: em_dcp_acct_hldg_
+    utfundfile: em_dcp_fund_
+    utbatchaccountinfokey: UNIT_TRUST
+    utfiles:
+    - name: em_dcp_cis_{#date}.txt
+      namedateformat: yyyyMMdd
+      headerprefix: DH
+      headernames: recordIndicator,processingDate,systemDate,systemTime
+      detailprefix: DD
+      detailnames: recordIndicator,cisNo,customerName
+      trailerprefix: DT
+      trailernames: recordIndicator,recordCount
+      daydiff: -1
+    - name: em_dcp_cis_rel_{#date}.txt
+      namedateformat: yyyyMMdd
+      headerprefix: DH
+      headernames: recordIndicator,processingDate,systemDate,systemTime
+      detailprefix: DD
+      detailnames: recordIndicator,cisNo,accountNo,joinType
+      trailerprefix: DT
+      trailernames: recordIndicator,recordCount
+      daydiff: -1
+    - name: em_dcp_acct_{#date}.txt
+      namedateformat: yyyyMMdd
+      headerprefix: DH
+      headernames: recordIndicator,processingDate,systemDate,systemTime
+      detailprefix: DD
+      detailnames: recordIndicator,accountNo,signatoryCode,signatoryDescription,accountType,accountStatusCode,accountStatusDesc,accountInvestProduct,lastPerformedTxnDate
+      trailerprefix: DT
+      trailernames: recordIndicator,recordCount
+      daydiff: -1
+    - name: em_dcp_acct_hldg_{#date}.txt
+      namedateformat: yyyyMMdd
+      headerprefix: DH
+      headernames: recordIndicator,processingDate,systemDate,systemTime
+      detailprefix: DD
+      detailnames: recordIndicator,accountNo,fundId,holdingUnit,fundCurrMarketVal,fundCurrUnrealisedGainLoss,fundCurrUnrealisedGainLossPercent,fundCurrInvestAmnt,fundCurrAvgUnitPrice,fundMyrMarketVal,fundMyrUnrealisedGainLoss,fundMyrUnrealisedGainLossPercent,fundMyrInvestAmnt,fundMyrAvgUnitPrice
+      trailerprefix: DT
+      trailernames: recordIndicator,recordCount
+      daydiff: -1
+    - name: em_dcp_fund_{#date}.txt
+      namedateformat: yyyyMMdd
+      headerprefix: DH
+      headernames: recordIndicator,processingDate,systemDate,systemTime
+      detailprefix: DD
+      detailnames: recordIndicator,fundId,fundName,fundCurr,fundCurrNavPrice,navDate,prodCategoryCode,prodCategoryDesc,riskLevelCode,riskLevelDesc,myrNavPrice
+      trailerprefix: DT
+      trailernames: recordIndicator,recordCount
+      daydiff: -1
+  loadcardlinknotificationsjob:
+    chunksize: 10000
+    headerprefix: DH
+    headercolumns: 1-2,3-10,11-18,19-24,25-29,30-32
+    headernames: recordIndicator,processingDate,systemDate,systemTime,eventCode,keyType
+    detailprefix: DD
+    detaildelimiter: '|'
+    detailnames: recordIndicator,runningNumber,creditCard,paymentDueDate,creditCardType,minAmount,outstandingAmount,statementAmount,statementDate
+    trailerprefix: DT
+    trailercolumns: 1-2,3-24,25-42
+    trailernames: recordIndicator,recordCount,hashValue
+    name: DCP_LDCPD6002T_{#date}.txt
+    namedateformat: yyyyMMdd
+    ftpfolder:  dcp_cardlink_notification_from
+    batchcode: LDCPD6002T
+    eventcode: 50000
+    daydiff: -1
+  loadtermdepositjob:
+    chunksize: 100000
+    headerprefix: '00'
+    headercolumns: 1-2,3-12,13-22,23-28,29-36,37-44,45-52,53-60,61-68,69-99,100
+    headernames: recordType,fileBatchDate,fileSystemDate,fileSystemTime,fileBatchJobName,fileBatchJobNumber,fileBatchProcStep,fileBatchProgramId,fileBatchUserId,filter,endIndicator
+    detailprefix: '01'
+    detailcolumns: 1-2,3-4,5-7,8-37,38-40,41-49,50-59,60-99,100
+    detailnames: recordType,control1,productType,productDescription,tenure,interestRate,endDate,filter,endIndicator
+    trailerprefix: '99'
+    trailercolumns: 1-2,3-20,21-38,39-81,82
+    trailernames: recordType,totalRecordCount,totalAmount,filter,endIndicator
+    name: DCPFD_{#date}.txt
+    namedateformat: yyyyMMdd
+    ftpfolder: dcp_term_deposit_product
+    batchcode: LDCPD6003T
+    eventcode: 50000
+    daydiff: -1
+  blacklistedmsicjob:
+    chunksize: 100000
+    headerprefix: H
+    headerdelimiter: '|'
+    headercolumns: 1-1,2-24,25-38
+    headernames: recordType,fileName,creationDate
+    detailprefix: D
+    detaildelimiter: '|'
+    detailcoulmns: 1-1,2-20,21-40,41-290,291-291,292-292,293-312,313-362,363-376,377-426,427-440
+    detailnames: recordType,id,msic,description,accountType,islamicIndicator,status,createApprovedId,createApprovedDate,updateApprovedId,updateApprovedDate
+    trailerprefix: T
+    trailerdelimiter: '|'
+    trailercolumns: 1-1,2-8
+    trailernames: recordType,totalRecordCount
+    name: BLMsicCode_{#date}.txt
+    namedateformat: yyyyMMdd
+    ftpfolder:  dcp_blacklisted_msic
+    batchcode: LDCPD6004T
+    eventcode: 50000
+    daydiff: -1
+  usermaintenanceautoagingjob:
+    chunksize: 10000
+    jdbcpagingsize: 1000
+    eventcode: 20019
+    jmsqueue: jms/queue/q_dcpbo_audit
+    auditmessageusername: dcpbobatch
+  pushcardlinknotificationsjob:
+    chunksize: 10000
+    jdbcpagingsize: 1000
+    eventcode: 50000
+    jmsqueue: jms/queue/q_bulk_notifications
+    batchcode: LDCPD6004B
+    throttlesize: -1
+  systemolacasaremindernotificationjob:
+    chunksize: 10000
+    jdbcpagingsize: 1000
+    eventcode: 20037
+    jmsqueue: jms/queue/q_bulk_notifications
+    batchcode: LDCPD4123B
+    throttlesize: -1
+  snapshotbousersgroupjob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+  externalinterfacescheckjob:
+    enabledbcheckconnectivity: true
+    enablejaspercheckconnectivity: true
+    enablefilesendtoftpcheck: true
+    enablejmscheck: true
+    enableibksftpcheckconnectivity: true
+    enableibkftpcheckconnectivity: true
+    enableibksftpdownloadcheck: false
+    enableibkftpdownloadcheck: false
+    jmssmsqueue: jms/queue/q_notifications
+    #ftpdcptargetfolderpath: dcp_bpf_master_from
+    #ftpibkfoldertolist: bpf_from_5017
+    #ftpibkprepaidfoldertolist: nibk_prepaid_to
+    ftpdcptargetfolderpath: /
+    ftpibkfoldertolist: /
+    ftpibkprepaidfoldertolist: /
+  extractcardlinknotificationsprocessorjob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    batchcode: LDCPD6003B
+  loadmassnotificationsjob:
+    chunksize: 10000
+    headerprefix: DH
+    headercolumns: 1-2,3-7
+    headernames: recordIndicator,eventCode
+    detailprefix: DD
+    detaildelimiter: '|'
+    detailnames: recordIndicator,content
+    name: DCP_LDCPA6005T_{#date}.txt
+    namedateformat: yyyyMMdd
+    batchcode: LDCPA6005T
+    # Important Notice: 90002
+    # Promotion: 90003
+    # System Maintenance: 90004
+    #eventcode: 90002
+  pushmassnotificationsprocessorjob:
+    chunksize: 10000
+    jdbcpagingsize: 1000
+    jmsqueue: jms/queue/q_bulk_notifications
+    batchcode: LDCPA6006B
+    throttlesize: -1
+  extractsystemadhocjob:
+    chunksize: 10000
+    jdbcpagingsize: 1000
+    batchcode: LDCPD6007B
+    eventcode: 90005
+    message: RHB:To enhance your experience, RHB Mobile App will be undergoing maintenance and unavailable from $startTime to $endTime.
+    daydiff: 0
+  pushadhocsystemdowntimenotificationsprocessorjob:
+    chunksize: 10000
+    jdbcpagingsize: 1000
+    jmsqueue: jms/queue/q_bulk_notifications
+    batchcode: LDCPD6008B
+    throttlesize: -1
+  asnbreconciliationrepotjob:
+    ftpfolder: /users/dcpsvruat/paymateagent_out_rhb0recon
+    outputfolder: /users/dcpsvruat/paymate_in
+    hostfolder: /users/dcpasnbuat/asnb_dcp_from
+    name: List of Successful Transaction –MB Sample.txt
+    namedateformat: yyyyMMdd
+    channelType: MA00,IB00
+    echannelFtpFolder: /users/dcpappsvr01/dcp_asnb_recon_report
+
+  dailyautosettlementjob:
+    ftpType: "00"
+    jobName: DMBASNB
+    jobNumber: 11111111
+    procStep:
+    progId:
+    userId: DMB
+    ftpTypeSummary: "01"
+    stlmtCtl2Code: 458
+    stlmtCtl3Code: 068
+    fAccNum: 21401360014612
+    drApplID: IM
+    crApplID: IM
+    drTranCode: 6365
+    crTranCode: 6330
+    channelCode: DMB
+    subChannel: PNB
+    pgmID: RHBBMYKL
+    ftpTypeFooter: 99
+  dailyautosettlementjobdmb:
+    ftpType: "00"
+    jobName: DMBASNB
+    jobNumber: 11111111
+    procStep:
+    progId:
+    userId: DMB
+    ftpTypeSummary: "01"
+    stlmtCtl2Code: 458
+    stlmtCtl3Code: 068
+    fAccNum: 21401360014612
+    drApplID: IM
+    crApplID: IM
+    drTranCode: 6365
+    crTranCode: 6330
+    drCrRecipRefPrefix: MA
+    channelCode: DMB
+    subChannel: PNB
+    pgmID: RHBBMYKL
+    ftpTypeFooter: 99
+  dailyautosettlementjobdib:
+    ftpType: "00"
+    jobName: DIBASNB
+    jobNumber: 11111111
+    procStep:
+    progId:
+    userId: DIB
+    ftpTypeSummary: "01"
+    stlmtCtl2Code: 458
+    stlmtCtl3Code: 068
+    fAccNum: 21401360014612
+    drApplID: IM
+    crApplID: IM
+    drTranCode: 2655
+    crTranCode: 2656
+    drCrRecipRefPrefix: DIB
+    channelCode: DIB
+    subChannel: PNB
+    pgmID: RHBBMYKL
+    ftpTypeFooter: 99
+  email:
+    host: 172.30.81.113
+    port: 25
+    username:
+    password:
+    to: Mvp1@bgiuatdom.rhbgroup.com
+    from: mvp5@bgiuatdom.rhbgroup.com
+    template_01: Non_Receive_ASNB_Non_Success_Txs.ftl
+    template_02: Non_Receive_ASNB_Success_Txs.ftl
+    template_03: Receive_ASNB_Empty_File_Non_Success_Txs.ftl
+    template_04: Receive_ASNB_Empty_File_Success_Txs.ftl
+    template_05: Receive_ASNB_Success_LessThan_Txs.ftl
+    template_06: Receive_ASNB_Success_MoreThan_Txs.ftl
+    template_07: Receive_ASNB_Success_Txs.ftl
+  emaildmbud089:
+    host: 172.30.81.113
+    port: 25
+    username:
+    password:
+    to: rider.service@nonSMTP.rhbgroup.com
+    from: mvp5@bgiuatdom.rhbgroup.com
+    subject: CASA OLA Application dated DD-MM-YYYY
+    body: Enclosed CASA OLA Application for your reference
+    smtpAuth: true
+    tlsEnable: false
+    tlsRequire: false
+    sslTrustAllCert: false
+    emailDebugMode: true
+  extractdebitcarddeliveryjob:
+    chunksize: 10000
+    jdbcpagingpagesize: 1000
+    detailcolumns: '%-19.19s%-3.3s%-3.3s%-8.8s%-6.6s%-3.3s%-8.8s%-3.3s%3.3s%-55.55s%-55.55s%-55.55s%-55.55s%-55.55s%-55.55s'
+    detailnames: accountNo,accountOrg,accountType,requestedDate,requestedTime,creator,offloadDate,category,requestedBy,address1,address2,address3,city,postcode,country
+    ftpfolder: DCP_DEBIT_CARD_TO
+    name: DCP_MEMO_{#date}.txt
+    namedateformat: yyyyMMdd
+    batchtime: '23:45:00'
+jasper:
+  server:
+    url: http://172.30.79.47:8080/jasperserver
+    username: Batchadmin
+    password: Batch123#
+  config:
+    reports:
+    - id: DMBUD999_1000
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 1000${yyyyMMdd}_rpt
+    - id: DMBUD999_1010
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: TMLIFE01${yyyyMMdd}_rpt
+    - id: DMBUD999_1091
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 1091${yyyyMMdd}_rpt
+    - id: DMBUD999_1200
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 1200${yyyyMMdd}_rpt
+    - id: DMBUD999_5017
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5017${yyyyMMdd}_rpt
+    - id: DMBUD999_5022
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5022${yyyyMMdd}_rpt
+    - id: DMBUD999_5035
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5035${yyyyMMdd}_rpt
+    - id: DMBUD999_5045
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5045${yyyyMMdd}_rpt
+    - id: DMBUD999_5049
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5049${yyyyMMdd}_rpt
+    - id: DMBUD999_5085
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5085${ddMMyyyy}_rpt
+    - id: DMBUD999_5105
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5105${ddMMyyyy}_rpt
+    - id: DMBUD999_5125
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5125${yyyyMMdd}_rpt
+    - id: DMBUD999_5126
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5126${yyyyMMdd}_rpt
+    - id: DMBUD999_5167
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5167${yyyyMMdd}_rpt
+    - id: DMBUD999_5185
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: U_Mobile-Data${ddMMyyyy}_rpt
+    - id: DMBUD999_5212
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5212${yyyyMMdd}_rpt
+    - id: DMBUD999_5229
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: TMLIFE01${yyyyMMdd}_rpt
+    - id: DMBUD999_5234
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5234${ddMMyyyy}_rpt
+    - id: DMBUD999_5300
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: Celcom${yyyyMMdd}_rpt
+    - id: DMBUD999_6004
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 6004${yyyyMMdd}_rpt
+    - id: DMBUD999_5014
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5014${yyyyMMdd}_rpt
+    - id: DMBUD999_5033
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5033${yyyyMMdd}_rpt
+    - id: DMBUD999_5149
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5149${yyyyMMdd}_rpt
+    - id: DMBUD999_5153
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5153${yyyyMMdd}_rpt
+    - id: DMBUD999_5242
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5242${yyyyMMdd}_rpt
+    - id: DMBUD999_5148
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5148${yyyyMMdd}_rpt
+    - id: DMBUD999_5270
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5270${yyyyMMdd}_rpt
+    - id: DMBUD999_5002
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5002${yyyyMMdd}_rpt
+    - id: DMBUD999_5030
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5030${yyyyMMdd}_rpt
+    - id: DMBUD999_5359
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5359${yyyyMMdd}_rpt
+    - id: DMBUD999_5176
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5176${yyyyMMdd}_rpt
+    - id: DMBUD999_5020
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5020${yyyyMMdd}_rpt
+    - id: DMBUD999_5174
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5174${yyyyMMdd}_rpt
+    - id: DMBUD999_5005
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5005${yyyyMMdd}_rpt
+    - id: DMBUD999_5209
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5209${yyyyMMdd}_rpt
+    - id: DMBUD999_6010
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 6010${yyyyMMdd}_rpt
+    - id: DMBUD999_5313
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5313${yyyyMMdd}_rpt
+    - id: DMBUD999_5047
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5047${yyyyMMdd}_rpt
+    - id: DMBUD999_5218
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5218${yyyyMMdd}_rpt
+    - id: DMBUD999_5247
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5247${yyyyMMdd}_rpt
+    - id: DMBUD999_5230
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5230${yyyyMMdd}_rpt
+    - id: DMBUD999_5159
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5159${yyyyMMdd}_rpt
+    - id: DMBUD999_5123
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5123${yyyyMMdd}_rpt
+    - id: DMBUD999_5009
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5009${yyyyMMdd}_rpt
+    - id: DMBUD999_5016
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5016${yyyyMMdd}_rpt
+    - id: DMBUD999_5096
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5096${yyyyMMdd}_rpt
+    - id: DMBUD999_5051
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5051${yyyyMMdd}_rpt
+    - id: DMBUD999_5042
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5042${yyyyMMdd}_rpt
+    - id: DMBUD999_5224
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5224${yyyyMMdd}_rpt
+    - id: DMBUD999_5127
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5127${yyyyMMdd}_rpt
+    - id: DMBUD999_5079
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5079${yyyyMMdd}_rpt
+    - id: DMBUD999_5285
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5285${yyyyMMdd}_rpt
+    - id: DMBUD999_5117
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5117${yyyyMMdd}_rpt
+    - id: DMBUD999_5076
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5076${yyyyMMdd}_rpt
+    - id: DMBUD999_5143
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5143${yyyyMMdd}_rpt
+    - id: DMBUD999_5217
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5217${yyyyMMdd}_rpt
+    - id: DMBUD999_5053
+      uri: /reports/DEV/Financial/DMBUD999/daily_successful_bill
+      format: PDF
+      filename: 5053${yyyyMMdd}_rpt
+    - id: DMBUD003
+      uri: /reports/DEV/Financial/DMBUD003/dmb_txn_vol_and_value
+      format: PDF,XLSX
+      targetpath: DMB_TXNVOL
+      filename: DMB_Txn_Vol_&_Value_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD004
+      uri: /reports/DEV/Financial/DMBUD004/success_bill_pay
+      format: PDF,XLSX
+      targetpath: DMB_BP_TXNS
+      filename: DMB_Successful BP_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD019
+      uri: /reports/DEV/Financial/DMBUD019/dmb_suspect_ft
+      format: PDF,XLSX
+      targetpath: DMB_SUSPECT
+      filename: DMB_Suspect_FT_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD030
+      uri: /reports/DEV/Financial/DMBUD030/dmb_success_duitnow
+      format: PDF,XLSX
+      targetpath: DMB_RPP_FROM
+      filename: DMB_Success_DuitNow_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD031
+      uri: /reports/DEV/Financial/DMBUD031/dmb_unsuccess_duitnow
+      format: PDF,XLSX
+      targetpath: DMB_RPP_FROM
+      filename: DMB_Unsuccess_DuitNow_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD065
+      uri: /reports/DEV/Financial/DMBUD065/dmb_bp_timeout_txn
+      format: PDF,XLSX
+      targetpath: DMB_BP_TO
+      filename: DMB_BP_Timeout_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM031
+      uri: /reports/DEV/Financial/DMBUM031/dmb_jompay_on_us_txn
+      format: PDF,XLSX
+      targetpath: dcp_jompay_onus_suc_monthly
+      filename: DMB_JomPAY_On_Us_Txn_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM032
+      uri: /reports/DEV/Financial/DMBUM032/dmb_jompay_off_us_txn
+      format: PDF,XLSX
+      targetpath: dcp_jompay_offus_suc_monthly
+      filename: DMB_JomPAY_Off_Us_Txn_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD008
+      uri: /reports/DEV/non_financial/DMBUD008/dmb_cust_profile_update
+      format: PDF,XLSX
+      targetpath: DMB_CUSTPROF_UPDATE
+      filename: DMB_Cust_Profile_Update_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD020
+      uri: /reports/DEV/non_financial/DMBUD020/dmb_webfraud_susp_user
+      format: PDF,XLSX
+      targetpath: DMB_WEBFRAUD
+      filename: DMB_WebFraud_Susp_User_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD032
+      uri: /reports/DEV/non_financial/DMBUD032/dmb_success_nad_reg
+      format: PDF,XLSX
+      targetpath: DMB_RPP_FROM
+      filename: DMB_Success_NAD_REG_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD033
+      uri: /reports/DEV/non_financial/DMBUD033/dmb_unsuccess_nad_reg
+      format: PDF,XLSX
+      targetpath: DMB_RPP_FROM
+      filename: DMB_Unsuccess_NAD_REG_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD034
+      uri: /reports/DEV/non_financial/DMBUD034/dmb_success_nad_maint
+      format: PDF,XLSX
+      targetpath: DMB_RPP_FROM
+      filename: DMB_Success_NAD_Maint_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD035
+      uri: /reports/DEV/non_financial/DMBUD035/dmb_unsuccess_nad_maint
+      format: PDF,XLSX
+      targetpath: DMB_RPP_FROM
+      filename: DMB_Unsuccess_NAD_Maint_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM030
+      uri: /reports/DEV/non_financial/DMBUM030/dmb_webfraud_timeout
+      format: PDF,XLSX
+      targetpath: DCP_WEBFRAUD
+      filename: DMB_WebFraud_Timeout_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM004
+      uri: /reports/DEV/non_financial/DMBUM004/dmb_act_subscribers_state
+      format: PDF,XLSX
+      targetpath: SUBSC_BY_STATE
+      filename: DMB_ACT_Subscribers_State_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBBT001
+      uri: /reports/DEV/sample/DMBBT001/dcp_batch_external_interfaces
+      format: PDF
+      filename: DMBBT001${yyyyMMdd}_rpt
+      targetpath: DMBBT001
+    - id: DMBID001
+      uri: /reports/DEV/IS/DMBID001/dmb_bo_user_id_maintenance
+      format: PDF,XLSX
+      targetpath: DCP_USER_MAINTENANCE
+      filename: DMB_BO_User_ID_Maintenance_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID002
+      uri: /reports/DEV/IS/DMBID002/dmb_role_maintenance_report
+      format: PDF,XLSX
+      targetpath: DCP_ROLE_MAINTENANCE
+      filename: DMB_Role_Maintenance_Report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID003
+      uri: /reports/DEV/IS/DMBID003/dmb_bo_user_logon_violation_report
+      format: PDF,XLSX
+      targetpath: DCP_USER_VIOLATION
+      filename: DMB_BO_User_Logon_Violation_Report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID005
+      uri: /reports/DEV/IS/DMBID005/dmb_rhb_customer_logon_violation_report
+      format: PDF,XLSX
+      targetpath: DCP_CUST_VIOLATION
+      filename: DMB_RHB_Customer_Logon_Violation_Report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID006
+      uri: /reports/DEV/IS/DMBID006/dmb_bo_user_access_activtiy
+      format: PDF,XLSX
+      targetpath: DCP_USER_ACTIVITY
+      filename: DMB_BO_User_Acces_Activtiy_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD005
+      uri: /reports/DEV/Financial/DMBUD005/dmb_unsuccessful_bp_txn
+      format: PDF,XLSX
+      targetpath: DCP_BP_TXNS_UNSUCCESSFUL
+      filename: DMB_Unsuccessful BP_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD036
+      uri: /reports/DEV/Financial/DMBUD036/dmb_jompay_on_us_txn
+      format: PDF,XLSX
+      targetpath: DCP_JOMPAY_PAYMENT
+      filename: DMB_JomPAY On Us Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD037
+      uri: /reports/DEV/Financial/DMBUD037/dmb_jompay_off_us_txn
+      format: PDF,XLSX
+      targetpath: DCP_JOMPAY_PAYMENT
+      filename: DMB_JomPAY Off Us Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD038
+      uri: /reports/DEV/Financial/DMBUD038/dmb_jompay_on_us_off_us_unsuccessful_txn
+      format: PDF,XLSX
+      targetpath: DCP_JOMPAY_FAILED_PYMT_DAILY
+      filename: DMB_JomPAY On Us Off Us_Unsuccessful Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD039
+      uri: /reports/DEV/Financial/DMBUD039/dmb_daily_successful_fund_transfer_txn
+      format: PDF,XLSX
+      targetpath: DCP_FUNDTRANSFER_SUCCESS_DAILY
+      filename: DMB_Daily_Successful_Fund_Transfer_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD040
+      uri: /reports/DEV/Financial/DMBUD040/dmb_daily_unsuccessful_fund_transfer_txn
+      format: PDF,XLSX
+      targetpath: DCP_FUNDTRANSFER_FAILED_DAILY
+      filename: DMB_Unsuccessful_Fund_Transfer_Txn_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBIM001
+      uri: /reports/DEV/IS/DMBIM001/dmb_bo_dormant_user
+      format: PDF,XLSX
+      targetpath: DCP_DORMANT_USERS
+      filename: DMB_BO_Dormant_User_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBIM002
+      uri: /reports/DEV/IS/DMBIM002/dmb_user_grp_listing
+      format: PDF,XLSX
+      targetpath: DCP_USER_GROUP
+      filename: DMB_User_Grp_Listing_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBIM003
+      uri: /reports/DEV/IS/DMBIM003/dmb_user_access_matrix
+      format: PDF,XLSX
+      targetpath: DCP_USER_MATRIX
+      filename: DMB_User_Access_Matrix_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBIM004
+      uri: /reports/DEV/IS/DMBIM004/dmb_full_user_profile
+      format: PDF,XLSX
+      targetpath: DCP_USER_PROFILE
+      filename: DMB_Full_User_Profile_${yyMM}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBID007
+      uri: /reports/DEV/IS/DMBID007/audit_log
+      format: XLSX
+      targetpath: dcp_audit_log_from
+      filename: DMB_Audit_Log_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD075
+      uri: /reports/DEV/IS/DMBUD075/dmb_abandoned_duitnow_enq
+      format: PDF,XLSX
+      targetpath: dcp_duitnow_enq
+      filename: Daily_DuitNow_Enquiry_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD078
+      uri: /reports/DEV/IS/DMBUD078/dmb_asnb_transaction_listing
+      format: PDF,XLSX
+      targetpath: dcp_asnb_enq
+      filename: asnb_sub_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD083
+      uri: /reports/DEV/IS/DMBUD083/MCA_Buy_Sell_Currency
+      format: PDF,XLSX
+      targetpath: dcp_mca_currency
+      filename: mca_buy_sell_currency_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD084
+      uri: /reports/DEV/IS/DMBUD084/MCA_Buy_Sell_Precious_Metal
+      format: PDF,XLSX
+      targetpath: dcp_mca_precious_metal
+      filename: mca_buy_sell_precious_metal_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD085
+      uri: /reports/DEV/IS/DMBUD085/mca_term_placment_withdrawal
+      format: PDF,XLSX
+      targetpath: dcp_mca_term_placment_withdrawal
+      filename: mca_term_placment_withdrawal_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD079
+      uri: /reports/DEV/IS/DMBUD079/registration_report
+      format: PDF,XLSX
+      targetpath: dcp_registration_report
+      filename: reg_sub__${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD081
+      uri: /reports/DEV/IS/DMBUD081/report_biller_Performance_Jompay
+      format: PDF,XLSX
+      targetpath: dcp_jompay_biller_txn
+      filename: biller_performance_jompay_biller_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD080
+      uri: /reports/DEV/IS/DMBUD080/report_biller_Performance_Non_Jompay
+      format: PDF,XLSX
+      targetpath: dcp_non_jompay_biller_txn
+      filename: biller_performance_non_jompay_biller_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD087
+      uri: /reports/DEV/IS/DMBUD087/Exceptional_Report_For_Inward_fpx_FD_TD
+      format: XLSX
+      targetpath: dcp_Exceptional_Report_For_Inward_fpx_FD_TD
+      filename: exceptional_inward_fpx_report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD086
+      uri: /reports/DEV/IS/DMBUD086/fd_td_performance
+      format: XLSX
+      targetpath: dcp_fd_td_performance
+      filename: td_fd_performance_report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD088
+      uri: /reports/DEV/IS/DMBUD088/outward_fpx_performance
+      format: PDF,XLSX
+      targetpath: dcp_outward_fpx_performance
+      filename: outward_fpx_performance_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD090
+      uri: /reports/DEV/IS/DMBUD090/ola_casa_abandon_report
+      format: XLSX
+      targetpath: dcp_ola_casa_abandon
+      filename: olacasa_abandon_report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD089
+      uri: /reports/DEV/IS/DMBUD089/ola_casa_application
+      format: XLSX
+      targetpath: dcp_ola_casa_application
+      filename: ola_casa_application_report_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD091
+      uri: /reports/DEV/IS/DMBUD091/biller_settlement_report_Daily
+      format: XLSX
+      targetpath: dcp_biller_settlement_report_Daily
+      filename: other_biller_settlement_daily_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD093
+      uri: /reports/DEV/IS/DMBUD093/biller_settlement_report_Weekly
+      format: XLSX
+      targetpath: dcp_biller_settlement_report_Weekly
+      filename: other_biller_settlement_Weekly_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD099
+      uri: /reports/DEV/Financial/DMBUD099/fpx_ekyc_failed_refund
+      format: XLSX
+      targetpath: inward_fpx_ekyc_failed_refund
+      filename: inward_fpx_ekyc_failed_refund_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD092
+      uri: /reports/DEV/Financial/DMBUD092/biller_settlement_report_monthly
+      format: XLSX
+      targetpath: dcp_biller_settlement_report_monthly
+      filename: other_biller_settlement_monthly_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUM036
+      uri: /reports/DEV/non_financial/DMBUM036/profile_management_device_management
+      format: XLSX
+      targetpath: dcp_prof_mgmt_device
+      filename: profile_management_device_management_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD094
+      uri: /reports/DEV/Financial/DMBUD094/profile_management_customer_demographics
+      format: XLSX
+      targetpath: dcp_prof_mgmt_cust_demo
+      filename: profile_management_customer_demographics_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD096
+      uri: /reports/DEV/Financial/DMBUD096/profile_management_by_non_financial_transaction_volume
+      format: XLSX
+      targetpath: dcp_prof_mgmt_non_fin_txn_vol
+      filename: profile_management_by_non_financial_transaction_volume_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD097
+      uri: /reports/DEV/Financial/DMBUD097/profile_management_by_non_financial_transaction_volume_summary
+      format: XLSX
+      targetpath: dcp_prof_mgmt_non_fin_txn_sum
+      filename: profile_management_by_non_financial_transaction_volume_summary_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+    - id: DMBUD095
+      uri: /reports/DEV/Financial/DMBUD095/profile_management_fin_txn_volume
+      format: XLSX
+      targetpath: dcp_prof_mgmt_fin_txn_vol
+      filename: profile_management_fin_txn_volume_${yyMMdd}
+      parameters:
+        - name: ignorePagination
+          value: true
+spring:
+  profiles:
+    active: @activatedProperty@
+  logging:
+    level:
+      root: DEBUG
+  batch:
+    initialize-schema: never
+    job:
+      enabled: false
+    table-prefix: TBL_BATCH_
+    repository:
+      isolation-level-for-create: ISOLATION_REPEATABLE_READ
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://172.30.82.186:2021;databaseName=dcpbo
+    username: dcpsql
+    password: dcpsql
+  datasource-dcp:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://172.30.82.186:2021;databaseName=dcp
+    username: dcpsql
+    password: dcpsql
+  datasource-dcparchive:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://172.30.82.186:2021;databaseName=dcp
+    username: dcpsql
+    password: dcpsql

@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+#  DCP BO Batch Spring Batch Launcher
+#
+#  Jobname      : RunReportJob
+#  JobID        : LDCPD5035F
+#  ReportName   : Daily Unsuccessful NAD Maintenance
+#  ReportID     : DMBUD035
+#
+###########################################################
+JOB_ID="LDCPD5035F"
+JOB_NAME="RunReportJob"
+JOB_BEAN_NAME="RunReportJob"
+REPORT_ID="DMBUD035"
+JOB_PARAMS="jobname=${JOB_BEAN_NAME} reportid=${REPORT_ID} batchid=${JOB_ID}"
+BIN_ARGS="-Djasypt.encryptor.password=${MASTER_KEY}"
+BIN_FILE=dcp-bo-batch.jar
+###########################################################
+BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+HOME_DIR=$(dirname $BIN_DIR)
+
+RUN_ID=$(date +"%Y%m%d_%H%M%S_%3N")
+echo "[${JOB_ID}] Start timestamp : `date +"%Y-%m-%d %H:%M:%S"`" >> ${HOME_DIR}/log/${JOB_NAME}/${JOB_ID}_${RUN_ID}.log
+
+# Create log folder if not exists
+if [ ! -d "${HOME_DIR}/log/${JOB_NAME}" ]; then
+  mkdir -p ${HOME_DIR}/log/${JOB_NAME}
+fi
+
+#Run the job
+$JAVA_HOME/bin/java -Dspring.config.location=${HOME_DIR}/config/ -jar ${BIN_ARGS} ${HOME_DIR}/app/${BIN_FILE} ${JOB_PARAMS} >> ${HOME_DIR}/log/${JOB_NAME}/${JOB_ID}_${RUN_ID}.log 2>&1
+
+JOB_RET=$?
+echo "[${JOB_ID}] End timestamp : `date +"%Y-%m-%d %H:%M:%S"`" >> ${HOME_DIR}/log/${JOB_NAME}/${JOB_ID}_${RUN_ID}.log
+echo "[${JOB_ID}] Return code : $JOB_RET" >> ${HOME_DIR}/log/${JOB_NAME}/${JOB_ID}_${RUN_ID}.log
+exit $JOB_RET
